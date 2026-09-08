@@ -13,6 +13,14 @@ Landing page estática criada a partir da identidade, logotipo e foto real da Dr
 
 O conteúdo de `dist/` funciona em hospedagem estática, inclusive Hostinger, preservando a estrutura de arquivos. A versão Sites serve como prévia privada; liberar uma versão pública exige configurar primeiro o checkout. A meta `noindex, nofollow` pode permanecer em uma LP de campanha; só altere se houver intenção de indexação.
 
+### Vercel pelo GitHub
+
+O arquivo `vercel.json` na raiz configura a publicação de `dist/`, onde estão `index.html`, a página de privacidade e os assets. O projeto é estático e não precisa instalar dependências nem executar build.
+
+Ao importar este repositório, mantenha **Root Directory** na raiz do repositório (campo vazio ou `.`) e use a branch `main`. O arquivo define **Framework Preset: Other**, comandos de instalação/build vazios e **Output Directory: dist**. Não configure `dist` simultaneamente como Root Directory e Output Directory.
+
+Se uma publicação anterior retornar 404, publique o commit que contém `vercel.json`. A integração com o GitHub deve criar uma nova publicação após o push; se isso não ocorrer, selecione **Redeploy** no deployment do commit atualizado. A rota `/` deve exibir a landing page e `/privacidade.html` deve abrir a política de privacidade.
+
 ## Acesso e mensuração
 
 Os CTAs redirecionam na mesma aba ao checkout validado; preservam os parâmetros existentes do destino e repassam apenas UTMs da URL atual. Nenhuma resposta do quiz, informação clínica ou dado pessoal é coletado. Não há pixel, GTM, cookies de publicidade, envio de dados ou eventos Purchase simulados. Um evento DOM local `jornada:checkout-click` expõe apenas a posição do botão para futura integração autorizada. Qualquer mensuração publicitária adicional exige configuração própria e revisão de privacidade.
