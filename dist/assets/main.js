@@ -66,6 +66,17 @@
     }));
   }
   if (hasStarted()) closeRegistrations();
+  const ribbonToggle = document.getElementById("ribbon-toggle");
+  const ribbonTrack = document.getElementById("event-ribbon-track");
+  if (ribbonToggle && ribbonTrack) {
+    ribbonToggle.addEventListener("click", () => {
+      const paused = ribbonToggle.getAttribute("aria-pressed") !== "true";
+      ribbonToggle.setAttribute("aria-pressed", String(paused));
+      ribbonToggle.setAttribute("aria-label", paused ? "Retomar faixa de data" : "Pausar faixa de data");
+      ribbonToggle.textContent = paused ? "▶" : "Ⅱ";
+      ribbonTrack.style.animationPlayState = paused ? "paused" : "running";
+    });
+  }
   const sticky = document.getElementById("mobile-cta");
   const ticket = document.querySelector(".ticket");
   if (sticky && ticket && "IntersectionObserver" in window) {

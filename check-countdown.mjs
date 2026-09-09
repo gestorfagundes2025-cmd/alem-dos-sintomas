@@ -2,7 +2,9 @@ import fs from 'node:fs';
 import vm from 'node:vm';
 import assert from 'node:assert/strict';
 const code=fs.readFileSync('dist/assets/countdown.js','utf8');
-const date='2026-09-16T19:00:00-03:00';
+const configured={window:{}};
+vm.runInNewContext(fs.readFileSync('dist/assets/config.js','utf8'),configured);
+const date=configured.window.JORNADA_CONFIG.eventStart;
 const target=Date.parse(date);
 assert.equal(new Date(target).toISOString(),'2026-09-16T22:00:00.000Z','Brasília offset is explicit');
 function run(now, eventStart=date){

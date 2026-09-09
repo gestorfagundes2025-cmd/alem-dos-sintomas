@@ -4,7 +4,7 @@ Landing page estática criada a partir da identidade, logotipo e foto real da Dr
 
 ## Antes de receber tráfego
 
-1. Em `dist/assets/config.js`, informar o URL HTTPS exato do checkout Hubla em `checkoutUrl`. Nunca usar apenas a página inicial da plataforma. A configuração vazia mantém todos os botões em modo de prévia, sem permitir compra.
+1. Checkout informado pelo responsável e configurado em `dist/assets/config.js`: https://pay.hub.la/u4gdUmckM4Y0xMqv9e5W . Os botões de compra usam esse destino. Uma configuração vazia volta ao modo de prévia.
 2. Confirmar o ingresso: mantido R$ 69 conforme o último alinhamento explícito do usuário. A reunião de 08/09 contém menção a R$ 69,90. Para mudar, editar `ticketPrice`; a página atualiza todas as indicações visíveis. Atualizar também os valores estáticos do HTML como fallback.
 3. Confirmar dados públicos do rodapé, CRM/RQE copiados da base, data, horário e conteúdo da aula com a equipe.
 4. Não divulgar como página ativa antes de conferir que o checkout é dessa oferta e que o valor coincide. Não foram feitas compras de teste.
@@ -51,3 +51,7 @@ O cronômetro usa `eventStart: "2026-09-16T19:00:00-03:00"`, equivalente a 22h U
 - Fotografias Pexels utilizadas conforme https://www.pexels.com/license/ . São imagens ilustrativas; a modelo não é apresentada como paciente nem como depoente do Instituto.
 
 Nenhuma fotografia foi gerada por IA. Os recortes da página são feitos por CSS.
+
+## Atualização de data e checkout
+
+Horário atualizado por solicitação explícita para quarta-feira, 16/09/2026, às 19h de Brasília. Contagem após a seção principal, data fixa destacada na abertura e faixa superior com movimento lento, botão de pausa e respeito à preferência de movimento reduzido. Checkout oficial ativado nos CTAs; não foi realizada compra.
