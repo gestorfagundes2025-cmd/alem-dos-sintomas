@@ -27,8 +27,27 @@ Os CTAs redirecionam na mesma aba ao checkout validado; preservam os parâmetros
 
 ## Validação realizada
 
-Checagens estáticas de referências locais, HTML e sintaxe JavaScript; verificação programática da lógica de checkout sem abrir o destino nem fazer pagamento. Responsividade implementada em CSS para telas pequenas, médias e grandes; não foi solicitado nem realizado teste visual no navegador.
+Checagens estáticas de referências locais, HTML e sintaxe JavaScript; verificação programática da lógica de checkout sem abrir o destino nem fazer pagamento. Revisão visual em navegador Chromium, com áreas de exibição de 320, 390, 768, 1024 e 1440 pixels. Nenhum transbordamento horizontal ou imagem quebrada nas larguras verificadas. Texto ampliado a 200% também conferido em 320 e 390 pixels. A verificação se limita ao navegador e às condições descritas; não inclui compra nem pagamento real.
 
 ## Conteúdo
 
 Oferta pública: aula ao vivo, 16/09/2026 às 19h; grupo apenas para avisos/acesso. Não promete replay, consulta, amostra capilar, acompanhamento de 30 dias, resultado clínico ou parâmetros de teste. A oferta posterior está fora da LP.
+
+## Revisão de setembro de 2026
+
+Marca revisada para **Instituto Shalon**, com N, inclusive metadados, textos alternativos e privacidade. Copy centrada em cansaço/fadiga, alterações intestinais, queda de cabelo e sono, apresentando três objetivos educativos. A Dra. Elizete conduz a narrativa; o ingresso inclui apenas a aula e o grupo de avisos/acesso.
+
+O cronômetro usa `eventStart: "2026-09-16T19:00:00-03:00"`, equivalente a 22h UTC. Recalcula o intervalo pela hora atual e não reinicia após o prazo. Na hora do evento, encerra a contagem e desabilita os botões de inscrição. As simulações cobrem virada do prazo, aba suspensa, atraso do temporizador e configuração inválida. A precisão depende do relógio do dispositivo.
+
+## Desenvolvimento e revisão
+
+`npm ci` e `npm run dev -- --port 4173` iniciam a prévia local com Vite. O caminho `/__review` existe apenas no ambiente de desenvolvimento e permite conferir larguras e ampliação de texto; não integra `dist/` nem a publicação estática. `npm run check` executa as verificações da página, checkout e cronômetro. A configuração estática da Vercel permanece independente dessas ferramentas.
+
+## Fotografias e identidade
+
+- Logotipo, ícone e retrato da Dra. Elizete: material original fornecido no ZIP do Instituto.
+- `momento-de-cuidado.jpg`: Ron Lach / Pexels — https://www.pexels.com/photo/woman-looking-through-window-at-home-9870242/
+- `alimentacao-e-habitos.jpg`: Ella Olsson / Pexels — https://www.pexels.com/photo/flat-lay-photography-of-vegetable-salad-on-plate-1640777/
+- Fotografias Pexels utilizadas conforme https://www.pexels.com/license/ . São imagens ilustrativas; a modelo não é apresentada como paciente nem como depoente do Instituto.
+
+Nenhuma fotografia foi gerada por IA. Os recortes da página são feitos por CSS.

@@ -1,0 +1,11 @@
+{
+  "name": "alem-dos-sintomas",
+  "version": "1.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "check": "node check-site.mjs && node check-countdown.mjs"
+  },
+  "devDependencies": { "vite": "8.2.2" }
+}

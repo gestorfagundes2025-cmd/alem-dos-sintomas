@@ -3,5 +3,6 @@
 window.JORNADA_CONFIG = Object.freeze({
   checkoutUrl: "",
   ticketPrice: 69,
-  currency: "BRL"
+  currency: "BRL",
+  eventStart: "2026-09-16T19:00:00-03:00"
 });

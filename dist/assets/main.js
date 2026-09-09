@@ -1,6 +1,8 @@
 (() => {
   "use strict";
   const config = window.JORNADA_CONFIG || {};
+  const eventStart = Date.parse(config.eventStart);
+  const hasStarted = () => Number.isFinite(eventStart) && Date.now() >= eventStart;
   const price = Number(config.ticketPrice);
   if (Number.isFinite(price) && price > 0) {
     const display = new Intl.NumberFormat("pt-BR", {style: "currency", currency: "BRL", minimumFractionDigits: Number.isInteger(price) ? 0 : 2}).format(price);
@@ -18,6 +20,18 @@
   } catch (_) { /* Sem checkout válido, manter a prévia explícita. */ }
   const notice = document.getElementById("preview-notice");
   const ctas = document.querySelectorAll("[data-checkout]");
+  const closeRegistrations = () => {
+    ctas.forEach(cta => {
+      cta.setAttribute("aria-disabled", "true");
+      cta.href = "#participar";
+      cta.textContent = "Inscrições encerradas";
+    });
+    if (notice) {
+      notice.hidden = false;
+      notice.textContent = "A data de início deste encontro já chegou. Consulte no grupo as orientações de acesso.";
+    }
+  };
+  window.addEventListener("jornada:event-started", closeRegistrations);
   if (checkout) {
     // Sem formulários, dados de saúde, pixels ou cookies de publicidade nesta entrega.
     // Repassa apenas códigos de campanha presentes na URL, sem armazená-los.
@@ -30,7 +44,12 @@
     ctas.forEach(cta => {
       cta.href = checkout.href;
       cta.removeAttribute("aria-disabled");
-      cta.addEventListener("click", () => {
+      cta.addEventListener("click", event => {
+        if (hasStarted()) {
+          event.preventDefault();
+          closeRegistrations();
+          return;
+        }
         // Gancho local opcional. Não envia dados a plataformas externas por conta própria.
         window.dispatchEvent(new CustomEvent("jornada:checkout-click", { detail: { placement: cta.dataset.location } }));
       });
@@ -38,13 +57,15 @@
   } else {
     ctas.forEach(cta => cta.addEventListener("click", event => {
       event.preventDefault();
+      if (hasStarted()) { closeRegistrations(); return; }
       if (notice) {
         notice.hidden = false;
-        notice.textContent = "Prévia para aprovação: a compra ainda não está disponível. Falta configurar o link oficial do checkout.";
+        notice.textContent = "As inscrições ainda não estão disponíveis. O link de pagamento será disponibilizado em breve.";
         notice.scrollIntoView({behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth", block: "start"});
       }
     }));
   }
+  if (hasStarted()) closeRegistrations();
   const sticky = document.getElementById("mobile-cta");
   const ticket = document.querySelector(".ticket");
   if (sticky && ticket && "IntersectionObserver" in window) {
