@@ -31,7 +31,7 @@ Checagens estáticas de referências locais, HTML e sintaxe JavaScript; verifica
 
 ## Conteúdo
 
-Oferta pública: aula ao vivo, 16/09/2026 às 19h; grupo apenas para avisos/acesso. Não promete replay, consulta, amostra capilar, acompanhamento de 30 dias, resultado clínico ou parâmetros de teste. A oferta posterior está fora da LP.
+Oferta pública: aula ao vivo, 16/09/2026 às 19h, e-book digital incluído e grupo para avisos/acesso. Não promete replay, consulta, amostra capilar, acompanhamento de 30 dias, resultado clínico ou parâmetros de teste. A oferta posterior está fora da LP.
 
 ## Revisão de setembro de 2026
 
@@ -55,3 +55,15 @@ Nenhuma fotografia foi gerada por IA. Os recortes da página são feitos por CSS
 ## Atualização de data e checkout
 
 Horário atualizado por solicitação explícita para quarta-feira, 16/09/2026, às 19h de Brasília. Contagem após a seção principal, data fixa destacada na abertura e faixa superior com movimento lento, botão de pausa e respeito à preferência de movimento reduzido. Checkout oficial ativado nos CTAs; não foi realizada compra.
+
+## E-book incluído na oferta — 14/09/2026
+
+Material lido: “A Jornada da Desintoxicação: Restaurando o Equilíbrio do Organismo”, Saúde Shalon, PDF fornecido pelo responsável. A página apresenta a leitura como apoio para consultar termos e conversar com a equipe, sem atribuir eficácia clínica a testes, produtos ou métodos citados no arquivo. O preço continua R$ 69. Não foram inventados valor avulso, desconto, número de vagas, prazo de acesso ou liberação imediata do e-book.
+
+O PDF completo não integra o repositório público nem é oferecido para download aberto. A entrega aos compradores deve ser organizada pela equipe; esta alteração cobre a oferta na landing page, não a automação de distribuição na Hubla/grupo.
+
+A fonte contém orientações sobre produtos e alegações clínicas que merecem revisão pela responsável médica antes de distribuir aos participantes (incluindo análise capilar, desintoxicação, tinturas e tratamentos por frequência). Essas alegações não foram transformadas em promessas publicitárias. Referência clínica consultada: https://www.nccih.nih.gov/health/detoxes-cleanses .
+
+Referências de copy: https://www.nngroup.com/articles/applying-writing-guidelines-web-pages/ (clareza, concisão e leitura por blocos; resultados de usabilidade, não promessa de conversão) e https://cxl.com/blog/types-value-propositions/ (relevância da proposta de valor por oferta). Aplicação: identificação com sintomas → aprendizado da aula → utilidade de consulta do e-book → itens incluídos → inscrição. O ganho de conversão depende de mensuração posterior.
+
+Mockup: `dist/assets/ebook-mockup.webp`, criado com imagegen a partir da capa fornecida. Prompt: mockup de um livreto fino, em perspectiva discreta, fundo claro, preservando o título, marca Saúde Shalon e imagem da capa. Representação ilustrativa de produto digital, explicitamente identificada na página. As fotografias de pessoas existentes permanecem as originais; apenas o mockup é gerado.
