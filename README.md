@@ -23,7 +23,11 @@ Se uma publicação anterior retornar 404, publique o commit que contém `vercel
 
 ## Acesso e mensuração
 
-Os CTAs redirecionam na mesma aba ao checkout validado; preservam os parâmetros existentes do destino e repassam apenas UTMs da URL atual. Nenhuma resposta do quiz, informação clínica ou dado pessoal é coletado. Não há pixel, GTM, cookies de publicidade, envio de dados ou eventos Purchase simulados. Um evento DOM local `jornada:checkout-click` expõe apenas a posição do botão para futura integração autorizada. Qualquer mensuração publicitária adicional exige configuração própria e revisão de privacidade.
+Os CTAs redirecionam à Hubla na mesma aba, preservando UTMs e fbclid. O Meta Pixel nativo 2283183939189207 registra PageView na abertura e AddToCart nos quatro CTAs (hero, content, ticket, mobile), com value 69, currency BRL e uma unidade do ingresso. Esse AddToCart representa a escolha do ingresso ao seguir ao checkout, conforme mapeamento solicitado; não há carrinho intermediário. Não disparar InitiateCheckout ou Purchase na LP. A Hubla é responsável por Purchase após pagamento confirmado.
+
+`dist/assets/tracking.js` inicializa o SDK uma única vez, desliga autoConfig e registra também `page_view` / `add_to_cart` em `window.dataLayer`, com o mesmo event_id enviado à Meta. O dataLayer é de auditoria: não instalar outro encaminhador via GTM para evitar duplicação. Duplo clique é protegido; inscrições encerradas ou checkout inválido não geram AddToCart. A saída normal aguarda 350 ms para dar tempo ao envio, sem depender de resposta da Meta; bloqueadores ou falta de rede ainda podem impedir entrega. Ctrl/Cmd e botão central preservam abertura em nova aba. O fallback noscript envia somente PageView.
+
+Não enviamos texto de sintomas, respostas clínicas, nomes, e-mails ou telefone nos parâmetros. A política de privacidade foi atualizada para refletir o pixel. Usar o mesmo pixel na integração nativa da Hubla; confirmar Purchase com valor e moeda de pagamento no Gerenciador de Eventos. Não criar regras automáticas sobre os mesmos botões. O funcionamento local não comprova aceitação pela Meta nem configuração do checkout. Referência: https://www.facebook.com/business/help/402791146561655 .
 
 ## Validação realizada
 

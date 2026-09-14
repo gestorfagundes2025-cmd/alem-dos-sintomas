@@ -5,7 +5,9 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "check": "node check-site.mjs && node check-countdown.mjs"
+    "check": "node check-site.mjs && node check-countdown.mjs && node check-tracking.mjs"
   },
-  "devDependencies": { "vite": "8.2.2" }
+  "devDependencies": {
+    "vite": "8.2.2"
+  }
 }

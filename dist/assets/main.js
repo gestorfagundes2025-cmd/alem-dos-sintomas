@@ -33,27 +33,39 @@
   };
   window.addEventListener("jornada:event-started", closeRegistrations);
   if (checkout) {
-    // Sem formulários, dados de saúde, pixels ou cookies de publicidade nesta entrega.
+    // Repassa somente atribuição de campanha, nunca respostas de saúde.
     // Repassa apenas códigos de campanha presentes na URL, sem armazená-los.
     const params = new URLSearchParams(window.location.search);
-    ["utm_source", "utm_medium", "utm_campaign", "utm_content", "utm_term"].forEach(key => {
+    ["utm_source", "utm_medium", "utm_campaign", "utm_content", "utm_term", "fbclid"].forEach(key => {
       const value = params.get(key);
-      if (value && value.length <= 160 && !checkout.searchParams.has(key)) checkout.searchParams.set(key, value);
+      if (value && value.length <= (key === "fbclid" ? 512 : 160) && !checkout.searchParams.has(key)) checkout.searchParams.set(key, value);
     });
     if (notice) notice.hidden = true;
+    let navigationPending = false;
     ctas.forEach(cta => {
       cta.href = checkout.href;
       cta.removeAttribute("aria-disabled");
-      cta.addEventListener("click", event => {
+      const handleCheckout = event => {
         if (hasStarted()) {
           event.preventDefault();
           closeRegistrations();
           return;
         }
-        // Gancho local opcional. Não envia dados a plataformas externas por conta própria.
+        if (event.defaultPrevented) return;
+        if (navigationPending) { event.preventDefault(); return; }
         window.dispatchEvent(new CustomEvent("jornada:checkout-click", { detail: { placement: cta.dataset.location } }));
-      });
+        // Janela curta para envio do pixel, sem depender da resposta da Meta.
+        // Ctrl/Cmd/Shift e abertura em nova aba mantêm o comportamento nativo.
+        if (window.JORNADA_TRACKING && event.button !== 1 && !event.ctrlKey && !event.metaKey && !event.shiftKey && !event.altKey && (!cta.target || cta.target === "_self")) {
+          event.preventDefault();
+          navigationPending = true;
+          window.setTimeout(() => { window.location.assign(cta.href); }, 350);
+        }
+      };
+      cta.addEventListener("click", handleCheckout);
+      cta.addEventListener("auxclick", event => { if (event.button === 1) handleCheckout(event); });
     });
+    window.addEventListener("pageshow", () => { navigationPending = false; });
   } else {
     ctas.forEach(cta => cta.addEventListener("click", event => {
       event.preventDefault();
