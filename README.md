@@ -1,73 +1,79 @@
-# Jornada Além dos Sintomas
+# Saúde Shalon · Landing page
 
-Landing page estática criada a partir da identidade, logotipo e foto real da Dra. Elizete presentes no ZIP fornecido. O quiz original não foi modificado.
+Landing page editorial e responsiva para o **Saúde Shalon — Centro Terapêutico Avançado**. Layout branco e azul, Source Serif 4 nos títulos, Manrope na interface, imagens reais do acervo de marketing e contato pelo WhatsApp. Sem formulário, tabela de preços ou pixels ativos.
 
-## Antes de receber tráfego
+## Estado da entrega
 
-1. Checkout informado pelo responsável e configurado em `dist/assets/config.js`: https://pay.hub.la/u4gdUmckM4Y0xMqv9e5W . Os botões de compra usam esse destino. Uma configuração vazia volta ao modo de prévia.
-2. Confirmar o ingresso: mantido R$ 69 conforme o último alinhamento explícito do usuário. A reunião de 08/09 contém menção a R$ 69,90. Para mudar, editar `ticketPrice`; a página atualiza todas as indicações visíveis. Atualizar também os valores estáticos do HTML como fallback.
-3. Confirmar dados públicos do rodapé, CRM/RQE copiados da base, data, horário e conteúdo da aula com a equipe.
-4. Não divulgar como página ativa antes de conferir que o checkout é dessa oferta e que o valor coincide. Não foram feitas compras de teste.
+**Prévia de revisão.** A base visual e funcional está construída. O telefone oficial permanece vazio. Enquanto não for configurado, o botão abre um aviso de revisão: nenhuma mensagem é enviada e nenhum número fictício é utilizado. Depoimentos são espaços claramente identificados, não relatos inventados.
 
-## Publicação externa
+O código desta LP está na branch **`feat/saude-shalon-lp`**. A branch `main` mantém a LP do evento Além dos Sintomas. **Não mesclar esta branch em `main` para publicar a nova clínica**, pois são páginas diferentes. Para operação independente, use um novo projeto Vercel configurado para esta branch ou mova este código para um repositório próprio.
 
-O conteúdo de `dist/` funciona em hospedagem estática, inclusive Hostinger, preservando a estrutura de arquivos. A versão Sites serve como prévia privada; liberar uma versão pública exige configurar primeiro o checkout. A meta `noindex, nofollow` pode permanecer em uma LP de campanha; só altere se houver intenção de indexação.
+## Executar
 
-### Vercel pelo GitHub
+Node.js 22 ou superior. Não há dependências de produção para instalar.
 
-O arquivo `vercel.json` na raiz configura a publicação de `dist/`, onde estão `index.html`, a página de privacidade e os assets. O projeto é estático e não precisa instalar dependências nem executar build.
+```sh
+git clone --single-branch --branch feat/saude-shalon-lp https://github.com/gestorfagundes2025-cmd/alem-dos-sintomas.git saude-shalon-lp
+cd saude-shalon-lp
+npm test
+npm run build
+npm run preview
+```
 
-Ao importar este repositório, mantenha **Root Directory** na raiz do repositório (campo vazio ou `.`) e use a branch `main`. O arquivo define **Framework Preset: Other**, comandos de instalação/build vazios e **Output Directory: dist**. Não configure `dist` simultaneamente como Root Directory e Output Directory.
+O servidor local abre na porta `4173`. `npm run dev` também constrói e serve o site; não implementa hot reload. Após editar, execute o build novamente e atualize o navegador.
 
-Se uma publicação anterior retornar 404, publique o commit que contém `vercel.json`. A integração com o GitHub deve criar uma nova publicação após o push; se isso não ocorrer, selecione **Redeploy** no deployment do commit atualizado. A rota `/` deve exibir a landing page e `/privacidade.html` deve abrir a política de privacidade.
+## Vercel
 
-## Acesso e mensuração
+O arquivo `vercel.json` define projeto estático (`Other`), build `npm run build`, saída `dist`, headers de segurança e URLs limpas. O diretório raiz é o deste projeto, não `src` nem `dist`. O build não exige instalação de pacotes.
 
-Os CTAs redirecionam à Hubla na mesma aba, preservando UTMs e fbclid. O Meta Pixel nativo 2283183939189207 registra PageView na abertura e AddToCart nos quatro CTAs (hero, content, ticket, mobile), com value 69, currency BRL e uma unidade do ingresso. Esse AddToCart representa a escolha do ingresso ao seguir ao checkout, conforme mapeamento solicitado; não há carrinho intermediário. Não disparar InitiateCheckout ou Purchase na LP. A Hubla é responsável por Purchase após pagamento confirmado.
+A integração existente pode gerar um **Preview Deployment** a partir da branch. Isso não altera o domínio de produção do evento. Caso a integração não gere a prévia automaticamente, importe o código em um **projeto Vercel separado** e configure a branch de origem corretamente antes de publicar. Não aponte o domínio do evento para esta LP.
 
-`dist/assets/tracking.js` inicializa o SDK uma única vez, desliga autoConfig e registra também `page_view` / `add_to_cart` em `window.dataLayer`, com o mesmo event_id enviado à Meta. O dataLayer é de auditoria: não instalar outro encaminhador via GTM para evitar duplicação. Duplo clique é protegido; inscrições encerradas ou checkout inválido não geram AddToCart. A saída normal aguarda 350 ms para dar tempo ao envio, sem depender de resposta da Meta; bloqueadores ou falta de rede ainda podem impedir entrega. Ctrl/Cmd e botão central preservam abertura em nova aba. O fallback noscript envia somente PageView.
+Para ativar o WhatsApp, configure `WHATSAPP_OFICIAL` nas variáveis de ambiente da Vercel (DDI 55 + DDD + número, somente dígitos) ou edite `whatsapp` em `site.config.mjs`. Não há um valor de exemplo utilizável na configuração padrão. Faça novo deploy após a alteração.
 
-Não enviamos texto de sintomas, respostas clínicas, nomes, e-mails ou telefone nos parâmetros. A política de privacidade foi atualizada para refletir o pixel. Usar o mesmo pixel na integração nativa da Hubla; confirmar Purchase com valor e moeda de pagamento no Gerenciador de Eventos. Não criar regras automáticas sobre os mesmos botões. O funcionamento local não comprova aceitação pela Meta nem configuração do checkout. Referência: https://www.facebook.com/business/help/402791146561655 .
+## Revisão e campanha
 
-## Validação realizada
+`site.config.mjs` centraliza nome, mensagem, telefone, domínio canônico, identificação jurídica e aprovações. Não insira chaves privadas nem dados de pacientes nesse arquivo.
 
-Checagens estáticas de referências locais, HTML e sintaxe JavaScript; verificação programática da lógica de checkout sem abrir o destino nem fazer pagamento. Revisão visual em navegador Chromium, com áreas de exibição de 320, 390, 768, 1024 e 1440 pixels. Nenhum transbordamento horizontal ou imagem quebrada nas larguras verificadas. Texto ampliado a 200% também conferido em 320 e 390 pixels. A verificação se limita ao navegador e às condições descritas; não inclui compra nem pagamento real.
+- Modo padrão: `review`, com `noindex,nofollow`, `robots.txt` restritivo, aviso e espaços de revisão.
+- `SITE_MODE=live` exige telefone, URL HTTPS, dados jurídicos e as quatro aprovações explícitas. Um build incompleto falha, em vez de liberar informações fictícias.
+- Deployments com `VERCEL_ENV=preview` permanecem em revisão, mesmo quando o modo live é solicitado.
+- As seções delimitadas por `REVIEW:START` e `REVIEW:END` são retiradas no build live. Para utilizar depoimentos reais, substitua os espaços com autorização e adapte a seção para a publicação; não deixe os placeholders fora desses delimitadores.
+- `noindex` é uma orientação para buscadores, **não controle de acesso**. A branch e os previews podem ser públicos. Não colocar informações confidenciais aqui.
 
-## Conteúdo
+## Conteúdo e limites
 
-Oferta pública: aula ao vivo, 16/09/2026 às 19h, e-book digital incluído e grupo para avisos/acesso. Não promete replay, consulta, amostra capilar, acompanhamento de 30 dias, resultado clínico ou parâmetros de teste. A oferta posterior está fora da LP.
+O conteúdo diferencia avaliação presencial de 2–3 horas, análise de 800 parâmetros, explicação, sessão inicial conforme indicação, contato aos 20 dias e retorno aos 45 dias. Protocolos de continuidade são contratados à parte. Não afirma 800 exames ou 800 diagnósticos. A etapa terapêutica não é apresentada como consulta pessoal com a doutora.
 
-## Revisão de setembro de 2026
+Antes de campanha, validar oferta, responsabilidades profissionais, alegações clínicas, autorizações de imagem, dados jurídicos e identidade final. O wordmark tipográfico é uma composição de revisão, não um arquivo de logotipo oficial. O logotipo histórico localizado identificava outra frente e não foi apresentado como a nova marca.
 
-Marca revisada para **Instituto Shalon**, com N, inclusive metadados, textos alternativos e privacidade. Copy centrada em cansaço/fadiga, alterações intestinais, queda de cabelo e sono, apresentando três objetivos educativos. A Dra. Elizete conduz a narrativa; o ingresso inclui apenas a aula e o grupo de avisos/acesso.
+## Imagens e fontes
 
-O cronômetro usa `eventStart: "2026-09-16T19:00:00-03:00"`, equivalente a 22h UTC. Recalcula o intervalo pela hora atual e não reinicia após o prazo. Na hora do evento, encerra a contagem e desabilita os botões de inscrição. As simulações cobrem virada do prazo, aba suspensa, atraso do temporizador e configuração inválida. A precisão depende do relógio do dispositivo.
+As três imagens utilizadas vieram de acervo institucional de marketing acessível na execução. A origem técnica está em `assets.manifest.json`. O acesso a um arquivo não substitui a autorização de uso de imagem; a aprovação permanece pendente.
 
-## Desenvolvimento e revisão
+O build usa primeiro as imagens locais em `public/assets`. Na ausência, baixa a versão reduzida dos arquivos públicos indicados no manifesto. A automação do GitHub versiona essas imagens na branch depois de um build bem-sucedido, para não depender de novos downloads em cada deploy. Se uma fonte ficar indisponível antes disso, coloque a imagem autorizada no caminho informado e execute novamente.
 
-`npm ci` e `npm run dev -- --port 4173` iniciam a prévia local com Vite. O caminho `/__review` existe apenas no ambiente de desenvolvimento e permite conferir larguras e ampliação de texto; não integra `dist/` nem a publicação estática. `npm run check` executa as verificações da página, checkout e cronômetro. A configuração estática da Vercel permanece independente dessas ferramentas.
+No pacote ZIP entregue, as imagens já estão incluídas, otimizadas e sem EXIF. Fontes são carregadas pelo Google Fonts com `display=swap` e fallbacks. **Não há arquivos de fontes distribuídos no projeto.**
 
-## Fotografias e identidade
+## Organização
 
-- Logotipo, ícone e retrato da Dra. Elizete: material original fornecido no ZIP do Instituto.
-- `momento-de-cuidado.jpg`: Ron Lach / Pexels — https://www.pexels.com/photo/woman-looking-through-window-at-home-9870242/
-- `alimentacao-e-habitos.jpg`: Ella Olsson / Pexels — https://www.pexels.com/photo/flat-lay-photography-of-vegetable-salad-on-plate-1640777/
-- Fotografias Pexels utilizadas conforme https://www.pexels.com/license/ . São imagens ilustrativas; a modelo não é apresentada como paciente nem como depoente do Instituto.
+```text
+src/index.html           Conteúdo e estrutura semântica
+src/styles.css           Tokens, componentes e responsividade
+src/main.js              Menu, diálogos e botões
+src/contact.mjs          Validação do telefone e URL do WhatsApp
+src/privacidade.html     Minuta informativa de privacidade
+site.config.mjs          Configuração pública
+public/assets/           Imagens e favicon
+scripts/                 Build, verificação e servidor
+tests/contact.test.mjs   Testes de configuração e contato
+vercel.json              Configuração de hospedagem
+.github/workflows/       Verificação e versionamento de imagens
+```
 
-Nenhuma fotografia foi gerada por IA. Os recortes da página são feitos por CSS.
+## Medição
 
-## Atualização de data e checkout
+O código emite apenas o evento **local** `shalon:contact-intent` com `placement` e `channel`. Não envia esse evento à Meta, ao Google ou a um servidor. Representa intenção de clique, não mensagem enviada, lead validado, agendamento ou venda. Mensuração de saúde e compartilhamento de dados exigem uma implementação posterior adequada; não adicionar informações clínicas ao evento, à URL ou à mensagem pré-preenchida.
 
-Horário atualizado por solicitação explícita para quarta-feira, 16/09/2026, às 19h de Brasília. Contagem após a seção principal, data fixa destacada na abertura e faixa superior com movimento lento, botão de pausa e respeito à preferência de movimento reduzido. Checkout oficial ativado nos CTAs; não foi realizada compra.
+## Testes
 
-## E-book incluído na oferta — 14/09/2026
-
-Material lido: “A Jornada da Desintoxicação: Restaurando o Equilíbrio do Organismo”, Saúde Shalon, PDF fornecido pelo responsável. A página apresenta a leitura como apoio para consultar termos e conversar com a equipe, sem atribuir eficácia clínica a testes, produtos ou métodos citados no arquivo. O preço continua R$ 69. Não foram inventados valor avulso, desconto, número de vagas, prazo de acesso ou liberação imediata do e-book.
-
-O PDF completo não integra o repositório público nem é oferecido para download aberto. A entrega aos compradores deve ser organizada pela equipe; esta alteração cobre a oferta na landing page, não a automação de distribuição na Hubla/grupo.
-
-A fonte contém orientações sobre produtos e alegações clínicas que merecem revisão pela responsável médica antes de distribuir aos participantes (incluindo análise capilar, desintoxicação, tinturas e tratamentos por frequência). Essas alegações não foram transformadas em promessas publicitárias. Referência clínica consultada: https://www.nccih.nih.gov/health/detoxes-cleanses .
-
-Referências de copy: https://www.nngroup.com/articles/applying-writing-guidelines-web-pages/ (clareza, concisão e leitura por blocos; resultados de usabilidade, não promessa de conversão) e https://cxl.com/blog/types-value-propositions/ (relevância da proposta de valor por oferta). Aplicação: identificação com sintomas → aprendizado da aula → utilidade de consulta do e-book → itens incluídos → inscrição. O ganho de conversão depende de mensuração posterior.
-
-Mockup: `dist/assets/ebook-mockup.webp`, criado com imagegen a partir da capa fornecida. Prompt: mockup de um livreto fino, em perspectiva discreta, fundo claro, preservando o título, marca Saúde Shalon e imagem da capa. Representação ilustrativa de produto digital, explicitamente identificada na página. As fotografias de pessoas existentes permanecem as originais; apenas o mockup é gerado.
+`npm test`: dez testes unitários. `npm run build`: geração e verificação da grafia obrigatória, ausência de preços e formulário, H1, IDs, âncoras e imagens. A revisão visual e de interação foi executada em Chromium em oito larguras, de 320 a 1440 px. Consulte `docs/QA.md` para resultados e limitações.

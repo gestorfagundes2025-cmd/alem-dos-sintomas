@@ -1,0 +1,15 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import { normalizePhone, getWhatsAppUrl, validateRelease } from '../src/contact.mjs';
+import config from '../site.config.mjs';
+const fixture = '55' + '11' + '987654321';
+test('número vazio não gera link fictício',()=>assert.equal(getWhatsAppUrl('', 'Olá'),''));
+test('rejeita números incompletos',()=>assert.equal(normalizePhone('55119'),''));
+test('rejeita identificador simbólico',()=>assert.equal(normalizePhone('WHATSAPP_OFICIAL'),''));
+test('aceita formatação brasileira',()=>assert.equal(normalizePhone('+55 (11) 98765-4321'),fixture));
+test('bloqueia protocolo e letras',()=>assert.equal(normalizePhone('javascript:'+fixture),''));
+test('bloqueia telefone repetitivo',()=>assert.equal(normalizePhone('5511999999999'),''));
+test('encoda mensagem sem gerar atributos HTML',()=>{const url=getWhatsAppUrl(fixture,'Olá! Avaliação & retorno?'); assert.equal(new URL(url).searchParams.get('text'),'Olá! Avaliação & retorno?');});
+test('mantém a identidade obrigatória',()=>assert.equal(config.name,'Saúde Shalon'));
+test('configuração padrão está em revisão e bloqueia campanha',()=>{assert.equal(config.mode,'review');assert.ok(validateRelease(config).length>=5);});
+test('libera somente com dados e aprovações explícitos',()=>assert.deepEqual(validateRelease({...config,whatsapp:fixture,canonicalUrl:'https://example.org',legalEntity:'fixture',legalAddress:'fixture',privacyContact:'fixture',approvals:{copyAndOffer:true,images:true,credentials:true,legal:true}}),[]));

@@ -1,4 +1,8 @@
 node_modules/
+dist/
 .vercel/
-.vite/
-qa/results/
+.env*
+!.env.example
+.DS_Store
+playwright-report/
+test-results/
