@@ -62,14 +62,17 @@ for (const link of document.querySelectorAll('.contact-link')) {
 }
 const sticky = document.getElementById('mobile-contact');
 if (sticky && 'IntersectionObserver' in window) {
+  // No duplicate fixed CTA over the hero or the final contact block.
+  sticky.classList.add('is-away');
+  sticky.inert = true;
   const states = new Map();
   const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => states.set(entry.target, entry.isIntersecting));
-    const nearEnd = [...states.values()].some(Boolean);
-    sticky.classList.toggle('is-away', nearEnd);
-    sticky.inert = nearEnd;
+    const primaryVisible = [...states.values()].some(Boolean);
+    sticky.classList.toggle('is-away', primaryVisible);
+    sticky.inert = primaryVisible;
   }, { threshold: .08 });
-  document.querySelectorAll('#contato, .site-footer').forEach(node => observer.observe(node));
+  document.querySelectorAll('#inicio, #contato, .site-footer').forEach(node => observer.observe(node));
 }
 
 // Intentional play: no YouTube iframe or thumbnail request before activation.

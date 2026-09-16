@@ -25,6 +25,25 @@ jobs:
         run: python -m pip install 'playwright>=1.55,<2'
       - name: Validar responsividade, imagens e interações
         run: python scripts/browser_qa.py
+      - name: Empacotar código, mídia e prévias da revisão
+        uses: actions/upload-artifact@v7
+        with:
+          name: Saude-Shalon-LP-v2
+          retention-days: 7
+          if-no-files-found: error
+          path: |
+            src/
+            public/
+            scripts/
+            tests/
+            docs/
+            qa/v2/
+            dist/
+            package.json
+            site.config.mjs
+            assets.manifest.json
+            vercel.json
+            README.md
       - name: Versionar evidências e mídia pública
         run: |
           git add public/assets public/reference-media.json qa/v2
