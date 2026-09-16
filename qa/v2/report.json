@@ -1,0 +1,265 @@
+{
+  "widths": [
+    {
+      "viewport": 320,
+      "document": 320
+    },
+    {
+      "viewport": 360,
+      "document": 360
+    },
+    {
+      "viewport": 390,
+      "document": 390
+    },
+    {
+      "viewport": 430,
+      "document": 430
+    },
+    {
+      "viewport": 600,
+      "document": 600
+    },
+    {
+      "viewport": 768,
+      "document": 768
+    },
+    {
+      "viewport": 820,
+      "document": 820
+    },
+    {
+      "viewport": 1024,
+      "document": 1024
+    },
+    {
+      "viewport": 1280,
+      "document": 1280
+    },
+    {
+      "viewport": 1440,
+      "document": 1440
+    }
+  ],
+  "errors": [],
+  "image_failures": [],
+  "fonts": [
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "loaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "loaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "loaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "loaded"
+    },
+    {
+      "family": "Source Serif 4",
+      "status": "unloaded"
+    },
+    {
+      "family": "Source Serif 4",
+      "status": "unloaded"
+    },
+    {
+      "family": "Source Serif 4",
+      "status": "unloaded"
+    },
+    {
+      "family": "Source Serif 4",
+      "status": "unloaded"
+    },
+    {
+      "family": "Source Serif 4",
+      "status": "unloaded"
+    },
+    {
+      "family": "Source Serif 4",
+      "status": "loaded"
+    },
+    {
+      "family": "Source Serif 4",
+      "status": "unloaded"
+    },
+    {
+      "family": "Source Serif 4",
+      "status": "unloaded"
+    },
+    {
+      "family": "Source Serif 4",
+      "status": "unloaded"
+    },
+    {
+      "family": "Source Serif 4",
+      "status": "unloaded"
+    },
+    {
+      "family": "Source Serif 4",
+      "status": "unloaded"
+    },
+    {
+      "family": "Source Serif 4",
+      "status": "unloaded"
+    },
+    {
+      "family": "Source Serif 4",
+      "status": "unloaded"
+    },
+    {
+      "family": "Source Serif 4",
+      "status": "unloaded"
+    },
+    {
+      "family": "Source Serif 4",
+      "status": "unloaded"
+    },
+    {
+      "family": "Source Serif 4",
+      "status": "unloaded"
+    },
+    {
+      "family": "Source Serif 4",
+      "status": "unloaded"
+    },
+    {
+      "family": "Source Serif 4",
+      "status": "loaded"
+    },
+    {
+      "family": "Source Serif 4",
+      "status": "unloaded"
+    },
+    {
+      "family": "Source Serif 4",
+      "status": "unloaded"
+    },
+    {
+      "family": "Source Serif 4",
+      "status": "unloaded"
+    },
+    {
+      "family": "Source Serif 4",
+      "status": "unloaded"
+    },
+    {
+      "family": "Source Serif 4",
+      "status": "unloaded"
+    },
+    {
+      "family": "Source Serif 4",
+      "status": "loaded"
+    },
+    {
+      "family": "Source Serif 4",
+      "status": "unloaded"
+    },
+    {
+      "family": "Source Serif 4",
+      "status": "unloaded"
+    },
+    {
+      "family": "Source Serif 4",
+      "status": "unloaded"
+    },
+    {
+      "family": "Source Serif 4",
+      "status": "unloaded"
+    },
+    {
+      "family": "Source Serif 4",
+      "status": "unloaded"
+    },
+    {
+      "family": "Source Serif 4",
+      "status": "unloaded"
+    }
+  ],
+  "result": "passed"
+}
