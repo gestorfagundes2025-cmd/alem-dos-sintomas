@@ -10,23 +10,27 @@ concurrency:
 jobs:
   verify:
     runs-on: ubuntu-latest
-    timeout-minutes: 8
+    timeout-minutes: 10
     steps:
       - uses: actions/checkout@v7
       - uses: actions/setup-node@v7
         with:
           node-version: '22'
           package-manager-cache: false
-      - name: Preparar mídia institucional pública
-        run: node scripts/import-reference.mjs
+      - run: node scripts/import-reference.mjs
+      - run: node scripts/media-metadata.mjs
       - run: npm test
       - run: npm run build
-      - name: Versionar mídia pública utilizada na revisão
+      - name: Preparar testes de navegador
+        run: python -m pip install 'playwright>=1.55,<2'
+      - name: Validar responsividade, imagens e interações
+        run: python scripts/browser_qa.py
+      - name: Versionar evidências e mídia pública
         run: |
-          git add public/assets public/reference-media.json
+          git add public/assets public/reference-media.json qa/v2
           if ! git diff --cached --quiet; then
             git config user.name 'github-actions[bot]'
             git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-            git commit -m 'chore: incorpora mídia pública do site institucional [skip ci]'
+            git commit -m 'test: registra revisão visual e validação responsiva da LP [skip ci]'
             git push origin HEAD:feat/saude-shalon-lp
           fi

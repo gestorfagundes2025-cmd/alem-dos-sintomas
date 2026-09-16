@@ -71,3 +71,19 @@ if (sticky && 'IntersectionObserver' in window) {
   }, { threshold: .08 });
   document.querySelectorAll('#contato, .site-footer').forEach(node => observer.observe(node));
 }
+
+// Intentional play: no YouTube iframe or thumbnail request before activation.
+const play = document.getElementById('play-video');
+play?.addEventListener('click', () => {
+  const stage = document.getElementById('video-stage');
+  if (!stage || stage.querySelector('iframe')) return;
+  const frame = document.createElement('iframe');
+  frame.src = 'https://www.youtube-nocookie.com/embed/euDugEHasYg?autoplay=1&rel=0&playsinline=1';
+  frame.title = 'Vídeo do site institucional do Saúde Shalon';
+  frame.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+  frame.allowFullscreen = true;
+  frame.referrerPolicy = 'strict-origin-when-cross-origin';
+  frame.tabIndex = 0;
+  stage.replaceChildren(frame);
+  frame.focus();
+});
