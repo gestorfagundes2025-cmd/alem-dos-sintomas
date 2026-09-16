@@ -1,0 +1,37 @@
+{
+  "source": "https://saudeshalon.com.br/",
+  "videos": [
+    {
+      "id": "BibEJaedPfQ",
+      "url": "https://www.youtube.com/watch?v=BibEJaedPfQ",
+      "context": "> Book Appointment "
+    },
+    {
+      "id": "euDugEHasYg",
+      "url": "https://www.youtube.com/watch?v=euDugEHasYg",
+      "context": "t-wrap\"> "
+    }
+  ],
+  "images": [
+    {
+      "file": "/assets/exame-sensograma.jpg",
+      "source": "https://saudeshalon.com.br/wp-content/uploads/2022/12/mini_sensograma.jpg"
+    },
+    {
+      "file": "/assets/exame-eis.jpg",
+      "source": "https://saudeshalon.com.br/wp-content/uploads/2022/12/mini_es_complex.jpg"
+    },
+    {
+      "file": "/assets/exame-termografia.jpg",
+      "source": "https://saudeshalon.com.br/wp-content/uploads/2022/12/mini_termografia.jpg"
+    },
+    {
+      "file": "/assets/exame-cell.jpg",
+      "source": "https://saudeshalon.com.br/wp-content/uploads/2022/12/mini_cell_wellbeing.jpg"
+    },
+    {
+      "file": "/assets/exame-biobody.png",
+      "source": "https://saudeshalon.com.br/wp-content/uploads/2023/01/JFAPJFA.png"
+    }
+  ]
+}
