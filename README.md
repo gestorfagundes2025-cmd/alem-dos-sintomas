@@ -35,13 +35,13 @@ Checagens estáticas de referências locais, HTML e sintaxe JavaScript; verifica
 
 ## Conteúdo
 
-Oferta pública: aula ao vivo, 16/09/2026 às 19h, e-book digital incluído e grupo para avisos/acesso. Não promete replay, consulta, amostra capilar, acompanhamento de 30 dias, resultado clínico ou parâmetros de teste. A oferta posterior está fora da LP.
+Oferta pública: aula ao vivo, 23/09/2026 às 19h, e-book digital incluído e grupo para avisos/acesso. Não promete replay, consulta, amostra capilar, acompanhamento de 30 dias, resultado clínico ou parâmetros de teste. A oferta posterior está fora da LP.
 
 ## Revisão de setembro de 2026
 
 Marca revisada para **Instituto Shalon**, com N, inclusive metadados, textos alternativos e privacidade. Copy centrada em cansaço/fadiga, alterações intestinais, queda de cabelo e sono, apresentando três objetivos educativos. A Dra. Elizete conduz a narrativa; o ingresso inclui apenas a aula e o grupo de avisos/acesso.
 
-O cronômetro usa `eventStart: "2026-09-16T19:00:00-03:00"`, equivalente a 22h UTC. Recalcula o intervalo pela hora atual e não reinicia após o prazo. Na hora do evento, encerra a contagem e desabilita os botões de inscrição. As simulações cobrem virada do prazo, aba suspensa, atraso do temporizador e configuração inválida. A precisão depende do relógio do dispositivo.
+O cronômetro usa `eventStart: "2026-09-23T19:00:00-03:00"`, equivalente a 22h UTC. Recalcula o intervalo pela hora atual e não reinicia após o prazo. Na hora do evento, encerra a contagem e desabilita os botões de inscrição. As simulações cobrem virada do prazo, aba suspensa, atraso do temporizador e configuração inválida. A precisão depende do relógio do dispositivo.
 
 ## Desenvolvimento e revisão
 
@@ -58,16 +58,14 @@ Nenhuma fotografia foi gerada por IA. Os recortes da página são feitos por CSS
 
 ## Atualização de data e checkout
 
-Horário atualizado por solicitação explícita para quarta-feira, 16/09/2026, às 19h de Brasília. Contagem após a seção principal, data fixa destacada na abertura e faixa superior com movimento lento, botão de pausa e respeito à preferência de movimento reduzido. Checkout oficial ativado nos CTAs; não foi realizada compra.
+Horário atualizado por solicitação explícita para quarta-feira, 23/09/2026, às 19h de Brasília. Contagem após a seção principal, data fixa destacada na abertura e faixa superior com movimento lento, botão de pausa e respeito à preferência de movimento reduzido. Checkout oficial ativado nos CTAs; não foi realizada compra.
 
-## E-book incluído na oferta — 14/09/2026
+## E-book correto e nova data — 18/09/2026
 
-Material lido: “A Jornada da Desintoxicação: Restaurando o Equilíbrio do Organismo”, Saúde Shalon, PDF fornecido pelo responsável. A página apresenta a leitura como apoio para consultar termos e conversar com a equipe, sem atribuir eficácia clínica a testes, produtos ou métodos citados no arquivo. O preço continua R$ 69. Não foram inventados valor avulso, desconto, número de vagas, prazo de acesso ou liberação imediata do e-book.
+O evento foi remarcado para quarta-feira, 23/09/2026, às 19h de Brasília. Data atualizada na configuração, contador, texto, acessibilidade, metadados, ingresso, FAQ, faixa móvel e aviso sem JavaScript. O identificador técnico do ingresso permanece estável para preservar a mensuração do mesmo produto; o pixel e o checkout não mudaram.
 
-O PDF completo não integra o repositório público nem é oferecido para download aberto. A entrega aos compradores deve ser organizada pela equipe; esta alteração cobre a oferta na landing page, não a automação de distribuição na Hubla/grupo.
+E-book correto: “Além dos Sintomas — Pequenas escolhas, grandes transformações”, Dra. Elizete Kaffer, PDF de 28 páginas enviado como “Design sem nome.pdf”. A copy destaca conteúdo efetivamente presente: alimentação, hidratação, intestino, sono, movimento, estresse, inventário da rotina, checklists e Mapa do Terreno Biológico para escolher três prioridades. O mapa é apresentado como auto-observação, não como diagnóstico ou tratamento. O Movimento 21 Dias aparece no final do PDF como oferta separada, não incluída no ingresso.
 
-A fonte contém orientações sobre produtos e alegações clínicas que merecem revisão pela responsável médica antes de distribuir aos participantes (incluindo análise capilar, desintoxicação, tinturas e tratamentos por frequência). Essas alegações não foram transformadas em promessas publicitárias. Referência clínica consultada: https://www.nccih.nih.gov/health/detoxes-cleanses .
+A imagem `dist/assets/ebook-alem-dos-sintomas.webp` é uma renderização otimizada da capa original. O efeito de livro é aplicado em CSS, preservando integralmente os textos e a imagem fornecidos. A capa substitui o mockup do e-book anterior. O PDF integral não é publicado no site; a distribuição do novo arquivo aos compradores fica na plataforma de entrega.
 
-Referências de copy: https://www.nngroup.com/articles/applying-writing-guidelines-web-pages/ (clareza, concisão e leitura por blocos; resultados de usabilidade, não promessa de conversão) e https://cxl.com/blog/types-value-propositions/ (relevância da proposta de valor por oferta). Aplicação: identificação com sintomas → aprendizado da aula → utilidade de consulta do e-book → itens incluídos → inscrição. O ganho de conversão depende de mensuração posterior.
-
-Mockup: `dist/assets/ebook-mockup.webp`, criado com imagegen a partir da capa fornecida. Prompt: mockup de um livreto fino, em perspectiva discreta, fundo claro, preservando o título, marca Saúde Shalon e imagem da capa. Representação ilustrativa de produto digital, explicitamente identificada na página. As fotografias de pessoas existentes permanecem as originais; apenas o mockup é gerado.
+Preço e rastreamento permanecem em R$ 69 conforme aprovação anterior. A diferença observada na Hubla (R$ 69,90) ainda precisa ser alinhada pelo responsável pela oferta. Não houve alteração no checkout nem validação do recebimento de Purchase.

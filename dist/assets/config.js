@@ -3,8 +3,9 @@
 window.JORNADA_CONFIG = Object.freeze({
   checkoutUrl: "https://pay.hub.la/u4gdUmckM4Y0xMqv9e5W",
   metaPixelId: "2283183939189207",
+  // Identificador estável do mesmo ingresso, preservado após remarcação.
   ticketId: "jornada_16092026",
   ticketPrice: 69,
   currency: "BRL",
-  eventStart: "2026-09-16T19:00:00-03:00"
+  eventStart: "2026-09-23T19:00:00-03:00"
 });

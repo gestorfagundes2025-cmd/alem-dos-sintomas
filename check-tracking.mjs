@@ -3,7 +3,7 @@ import vm from 'node:vm';
 import assert from 'node:assert/strict';
 const source = Object.fromEntries(['config','tracking','main'].map(n=>[n,fs.readFileSync(`dist/assets/${n}.js`,'utf8')]));
 function setup({closed=false, invalid=false, existing=false}={}) {
-  let now=Date.parse(closed?'2026-09-17T00:00:00Z':'2026-09-14T12:00:00Z');
+  let now=Date.parse(closed?'2026-09-24T00:00:00Z':'2026-09-18T12:00:00Z');
   const listeners={}, inserted=[], timers=[], redirects=[];
   const ctas=['hero','content','ticket','mobile'].map(placement=>({dataset:{location:placement},attrs:{},handlers:{},setAttribute(k,v){this.attrs[k]=v},removeAttribute(k){delete this.attrs[k]},addEventListener(k,v){this.handlers[k]=v}}));
   const window={location:{search:'?utm_source=meta&fbclid=test-click-id&email=not-forwarded',assign(url){redirects.push(url)}},addEventListener(n,f){(listeners[n]??=[]).push(f)},dispatchEvent(e){for(const f of listeners[e.type]||[]) f(e)},setTimeout(f){timers.push(f)},matchMedia(){return {matches:true}}};

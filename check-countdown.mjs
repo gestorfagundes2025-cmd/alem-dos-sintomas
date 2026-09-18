@@ -6,7 +6,7 @@ const configured={window:{}};
 vm.runInNewContext(fs.readFileSync('dist/assets/config.js','utf8'),configured);
 const date=configured.window.JORNADA_CONFIG.eventStart;
 const target=Date.parse(date);
-assert.equal(new Date(target).toISOString(),'2026-09-16T22:00:00.000Z','Brasília offset is explicit');
+assert.equal(new Date(target).toISOString(),'2026-09-23T22:00:00.000Z','Brasília offset is explicit');
 function run(now, eventStart=date){
   const units=Object.fromEntries(['days','hours','minutes','seconds'].map(key=>[key,{textContent:'--'}]));
   const timer={hidden:false,dataset:{eventStart},querySelector(selector){return units[selector.match(/"(\w+)"/)[1]]}};
