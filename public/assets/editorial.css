@@ -733,3 +733,91 @@ html{scroll-padding-top:100px}body{font-size:18px}.wrap{width:min(100% - 80px,12
   .privacy-v6{padding-block:3.7rem}
   .privacy-v6-copy p{font-size:.92rem}
 }
+
+
+/* ==========================================================
+   V7 · Correções mobile a partir da revisão em iPhone · 29/09/2026
+   ========================================================== */
+
+/* Hero mobile: mantém o texto legível e desloca o rosto da Dra. para a área visual da direita */
+@media(max-width:820px){
+  .hero-v5 .hero-photo-v5 img{
+    max-width:none;
+    width:108%;
+    object-position:66% 38%;
+    transform:scale(1.055) translateX(5%);
+  }
+  .hero-v5 .hero-shade-v5{
+    background:
+      linear-gradient(90deg,rgba(8,39,59,.99) 0%,rgba(8,39,59,.95) 48%,rgba(8,39,59,.78) 66%,rgba(8,39,59,.24) 88%,rgba(8,39,59,.08) 100%),
+      linear-gradient(0deg,#0c2c43 0%,rgba(12,44,67,.72) 30%,transparent 73%);
+  }
+
+  /* A assinatura passa a fazer parte do fluxo. Evita sobreposição com legenda/copy. */
+  .authority-v5{
+    min-height:auto;
+  }
+  .authority-v5-content{
+    display:block;
+    min-height:auto;
+  }
+  .authority-v5-signature{
+    position:static;
+    width:auto;
+    max-width:620px;
+    margin:1.6rem 0 0;
+    padding:1.05rem 0 0;
+    border-left:0;
+    border-top:1px solid rgba(255,255,255,.30);
+  }
+  .authority-v5-signature small{
+    max-width:440px;
+  }
+}
+
+@media(max-width:560px){
+  .hero-v5 .hero-v5-inner{
+    min-height:590px;
+  }
+  .hero-v5 .hero-photo-v5 img{
+    width:116%;
+    object-position:66% 38%;
+    transform:scale(1.04) translateX(10%);
+  }
+  .hero-v5 h1{
+    max-width:88%;
+    font-size:clamp(2.35rem,11.4vw,3.2rem);
+    line-height:1.03;
+  }
+  .hero-v5 .hero-description{
+    max-width:92%;
+  }
+  .hero-v5 .hero-method{
+    max-width:88%;
+  }
+
+  .authority-v5{
+    min-height:auto;
+    padding-bottom:4.8rem;
+  }
+  .authority-v5 .authority-background{
+    inset:0 -40% 0 0;
+  }
+  .authority-v5 .authority-shade-v5{
+    background:
+      linear-gradient(90deg,rgba(9,45,66,.98) 0%,rgba(9,45,66,.90) 66%,rgba(9,45,66,.50) 100%),
+      linear-gradient(0deg,#092d42 0%,rgba(9,45,66,.82) 58%,transparent 94%);
+  }
+  .authority-v5-signature{
+    max-width:none;
+    margin-top:1.4rem;
+    padding-top:1rem;
+  }
+  .authority-v5-signature strong{
+    font-size:1.05rem;
+  }
+  .authority-v5-signature small{
+    display:block;
+    font-size:.70rem;
+  }
+}
