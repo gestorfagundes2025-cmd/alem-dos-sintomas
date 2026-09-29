@@ -1,0 +1,301 @@
+{
+  "widths": [
+    {
+      "viewport": 320,
+      "document": 320,
+      "hero_image_text_overlap_px2": 0
+    },
+    {
+      "viewport": 360,
+      "document": 360,
+      "hero_image_text_overlap_px2": 0
+    },
+    {
+      "viewport": 375,
+      "document": 375,
+      "hero_image_text_overlap_px2": 0
+    },
+    {
+      "viewport": 390,
+      "document": 390,
+      "hero_image_text_overlap_px2": 0
+    },
+    {
+      "viewport": 430,
+      "document": 430,
+      "hero_image_text_overlap_px2": 0
+    },
+    {
+      "viewport": 600,
+      "document": 600,
+      "hero_image_text_overlap_px2": 0
+    },
+    {
+      "viewport": 768,
+      "document": 768,
+      "hero_image_text_overlap_px2": 0
+    },
+    {
+      "viewport": 820,
+      "document": 820,
+      "hero_image_text_overlap_px2": 0
+    },
+    {
+      "viewport": 1024,
+      "document": 1024,
+      "hero_image_text_overlap_px2": 0.0
+    },
+    {
+      "viewport": 1280,
+      "document": 1280,
+      "hero_image_text_overlap_px2": 0.0
+    },
+    {
+      "viewport": 1440,
+      "document": 1440,
+      "hero_image_text_overlap_px2": 0.0
+    },
+    {
+      "viewport": 1920,
+      "document": 1920,
+      "hero_image_text_overlap_px2": 0.0
+    }
+  ],
+  "errors": [],
+  "image_failures": [],
+  "fonts": [
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "loaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "loaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "loaded"
+    },
+    {
+      "family": "Source Serif 4",
+      "status": "unloaded"
+    },
+    {
+      "family": "Source Serif 4",
+      "status": "unloaded"
+    },
+    {
+      "family": "Source Serif 4",
+      "status": "unloaded"
+    },
+    {
+      "family": "Source Serif 4",
+      "status": "unloaded"
+    },
+    {
+      "family": "Source Serif 4",
+      "status": "unloaded"
+    },
+    {
+      "family": "Source Serif 4",
+      "status": "loaded"
+    },
+    {
+      "family": "Source Serif 4",
+      "status": "unloaded"
+    },
+    {
+      "family": "Source Serif 4",
+      "status": "unloaded"
+    },
+    {
+      "family": "Source Serif 4",
+      "status": "unloaded"
+    },
+    {
+      "family": "Source Serif 4",
+      "status": "unloaded"
+    },
+    {
+      "family": "Source Serif 4",
+      "status": "unloaded"
+    },
+    {
+      "family": "Source Serif 4",
+      "status": "unloaded"
+    },
+    {
+      "family": "Source Serif 4",
+      "status": "unloaded"
+    },
+    {
+      "family": "Source Serif 4",
+      "status": "unloaded"
+    },
+    {
+      "family": "Source Serif 4",
+      "status": "unloaded"
+    },
+    {
+      "family": "Source Serif 4",
+      "status": "unloaded"
+    },
+    {
+      "family": "Source Serif 4",
+      "status": "unloaded"
+    },
+    {
+      "family": "Source Serif 4",
+      "status": "loaded"
+    },
+    {
+      "family": "Source Serif 4",
+      "status": "unloaded"
+    },
+    {
+      "family": "Source Serif 4",
+      "status": "unloaded"
+    },
+    {
+      "family": "Source Serif 4",
+      "status": "unloaded"
+    },
+    {
+      "family": "Source Serif 4",
+      "status": "unloaded"
+    },
+    {
+      "family": "Source Serif 4",
+      "status": "unloaded"
+    },
+    {
+      "family": "Source Serif 4",
+      "status": "loaded"
+    },
+    {
+      "family": "Source Serif 4",
+      "status": "unloaded"
+    },
+    {
+      "family": "Source Serif 4",
+      "status": "unloaded"
+    },
+    {
+      "family": "Source Serif 4",
+      "status": "unloaded"
+    },
+    {
+      "family": "Source Serif 4",
+      "status": "unloaded"
+    },
+    {
+      "family": "Source Serif 4",
+      "status": "unloaded"
+    },
+    {
+      "family": "Source Serif 4",
+      "status": "unloaded"
+    }
+  ],
+  "checks": [
+    "12 larguras sem overflow",
+    "hero sem sobreposição",
+    "texto principal >=16px",
+    "um H1",
+    "oferta em segunda seção",
+    "sem preços/formulário",
+    "WhatsApp sem número abre aviso",
+    "Escape devolve foco",
+    "menu móvel",
+    "FAQ",
+    "detalhes de recursos",
+    "imagens",
+    "movimento reduzido",
+    "YouTube só após clique"
+  ],
+  "result": "passed"
+}
