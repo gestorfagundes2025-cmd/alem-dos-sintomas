@@ -14,3 +14,7 @@ test('scroll e parallax são implementados com redução de movimento',()=>{asse
 test('botões e X possuem microinterações',()=>{assert.ok(css.includes('.button:hover .arrow'));assert.ok(css.includes('.close-dialog:hover'));});
 test('YouTube continua sob clique',()=>{assert.ok(!html.includes('<iframe'));assert.ok(html.includes('id="play-video"'));assert.ok(js.includes('youtube-nocookie.com/embed/euDugEHasYg'));});
 test('CSP continua sem unsafe-inline',()=>{const policy=vercel.headers.flatMap(x=>x.headers).find(x=>x.key==='Content-Security-Policy').value;assert.ok(!policy.includes("'unsafe-inline'"));});
+
+test('espaço da clínica vem antes das dúvidas',()=>assert.ok(html.indexOf('id="espaco"')<html.indexOf('id="duvidas"')));
+test('jornada não usa mais fotografia do equipamento corporal',()=>{const journey=html.slice(html.indexOf('id="jornada"'),html.indexOf('id="equipe"'));assert.ok(!journey.includes('/assets/avaliacao-corporal.jpg'));assert.ok(journey.includes('/assets/clinica-recepcao.jpg'));});
+test('hero não mantém assinatura lateral duplicada',()=>{const hero=html.slice(html.indexOf('id="inicio"'),html.indexOf('id="atendimento"'));assert.ok(!hero.includes('hero-signature'));});
