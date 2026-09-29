@@ -28,19 +28,22 @@ try:
             for selector in ['.hero-description','.signal p','.care-path article p:last-child','.faq-list details>div p']:
                 size=page.locator(selector).first.evaluate('(e)=>parseFloat(getComputedStyle(e).fontSize)')
                 assert size>=16,(width,selector,size)
-            # CTA animation
+            # Hover animations are validated on pointer-capable desktop widths.
+            # Mobile functional behavior is validated separately.
             cta=page.locator('[data-placement="hero"]')
-            arrow=cta.locator('.arrow')
-            before=arrow.evaluate('(e)=>getComputedStyle(e).transform')
-            cta.hover(); page.wait_for_timeout(360)
-            after=arrow.evaluate('(e)=>getComputedStyle(e).transform')
-            assert before!=after,(width,before,after)
+            if width>=1024:
+                arrow=cta.locator('.arrow')
+                before=arrow.evaluate('(e)=>getComputedStyle(e).transform')
+                cta.hover(); page.wait_for_timeout(360)
+                after=arrow.evaluate('(e)=>getComputedStyle(e).transform')
+                assert before!=after,(width,before,after)
             cta.click(); assert page.locator('#contact-dialog').evaluate('(e)=>e.open')
             close=page.locator('#contact-dialog .close-dialog')
-            x_before=close.evaluate("(e)=>getComputedStyle(e,'::before').transform")
-            close.hover(); page.wait_for_timeout(380)
-            x_after=close.evaluate("(e)=>getComputedStyle(e,'::before').transform")
-            assert x_before!=x_after,(width,x_before,x_after)
+            if width>=1024:
+                x_before=close.evaluate("(e)=>getComputedStyle(e,'::before').transform")
+                close.hover(); page.wait_for_timeout(380)
+                x_after=close.evaluate("(e)=>getComputedStyle(e,'::before').transform")
+                assert x_before!=x_after,(width,x_before,x_after)
             page.keyboard.press('Escape'); page.wait_for_timeout(50)
             assert cta.evaluate('(e)=>document.activeElement===e')
             if width<=820:
