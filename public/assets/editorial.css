@@ -810,8 +810,8 @@ html{scroll-padding-top:100px}body{font-size:18px}.wrap{width:min(100% - 80px,12
   }
   .authority-v5-signature{
     max-width:none;
-    margin-top:1.4rem;
-    padding-top:1rem;
+    margin-top:2rem;
+    padding-top:1.1rem;
   }
   .authority-v5-signature strong{
     font-size:1.05rem;
