@@ -21,7 +21,7 @@ try:
 
             hero=page.locator('.hero-v5')
             assert hero.count()==1
-            assert page.locator('.hero-photo-v5 img').get_attribute('src')=='/assets/atividade-profissional.jpg'
+            assert page.locator('.hero-photo-v5 img').get_attribute('src')=='/assets/atividade-profissional.webp'
             assert page.locator('.hero-signature').count()==0
             assert page.locator('[data-editorial-version="6"]').count()==1
             assert page.locator('h1').count()==1
@@ -46,7 +46,7 @@ try:
                 assert radius in ('0px',''),(width,height,selector,radius)
 
             # Background treatment is native to sections.
-            assert page.locator('.journey-backdrop img').get_attribute('src')=='/assets/clinica-recepcao.jpg'
+            assert page.locator('.journey-backdrop img').get_attribute('src')=='/assets/clinica-recepcao.webp'
             assert page.locator('#espaco .space-shot').count()==3
             assert page.locator('.privacy-v6').count()==1
             assert page.locator('.privacy-v6 a[href="/privacidade.html"]').count()==1
