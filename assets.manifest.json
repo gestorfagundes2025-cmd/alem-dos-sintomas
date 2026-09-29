@@ -61,5 +61,32 @@
       "https://drive.google.com/thumbnail?id=1XEBdYwCIpJcPIcxS2TI6veTjLlKh8atD&sz=w1400",
       "https://lh3.googleusercontent.com/d/1XEBdYwCIpJcPIcxS2TI6veTjLlKh8atD=w1400"
     ]
+  },
+  {
+    "path": "assets/clinica-recepcao.jpg",
+    "sourceTitle": "_MG_1610.jpg",
+    "sourceType": "acervo institucional do Saúde Shalon; ambiente interno da clínica",
+    "sources": [
+      "https://drive.google.com/thumbnail?id=11tfZKsc2qMbCs_DyAfLAiSp_0NGdrCjO&sz=w1800",
+      "https://lh3.googleusercontent.com/d/11tfZKsc2qMbCs_DyAfLAiSp_0NGdrCjO=w1800"
+    ]
+  },
+  {
+    "path": "assets/clinica-espera.jpg",
+    "sourceTitle": "_MG_1607.jpg",
+    "sourceType": "acervo institucional do Saúde Shalon; ambiente de espera da clínica",
+    "sources": [
+      "https://drive.google.com/thumbnail?id=1_-tayt0KcRi8eZgeX_Iydl4vSRkFmaNg&sz=w1600",
+      "https://lh3.googleusercontent.com/d/1_-tayt0KcRi8eZgeX_Iydl4vSRkFmaNg=w1600"
+    ]
+  },
+  {
+    "path": "assets/clinica-corredor.jpg",
+    "sourceTitle": "_MG_1651.jpg",
+    "sourceType": "acervo institucional do Saúde Shalon; corredor e salas da clínica",
+    "sources": [
+      "https://drive.google.com/thumbnail?id=1LCCCpnF2piCj8R7FoC631ARwjsM0Ic8m&sz=w1600",
+      "https://lh3.googleusercontent.com/d/1LCCCpnF2piCj8R7FoC631ARwjsM0Ic8m=w1600"
+    ]
   }
 ]
