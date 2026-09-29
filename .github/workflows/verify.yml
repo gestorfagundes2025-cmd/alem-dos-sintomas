@@ -4,6 +4,7 @@ on:
     branches: [feat/saude-shalon-lp]
 permissions:
   contents: write
+  deployments: read
 concurrency:
   group: saude-shalon-preview
   cancel-in-progress: false
@@ -17,19 +18,32 @@ jobs:
         with:
           node-version: '22'
           package-manager-cache: false
-      - run: node scripts/import-reference.mjs
-      - run: node scripts/media-metadata.mjs
+      - name: Aplicar refinamento editorial idempotente
+        run: node scripts/refine-layout.mjs
       - run: npm test
       - run: npm run build
       - name: Preparar testes de navegador
         run: python -m pip install 'playwright>=1.55,<2'
-      - name: Validar responsividade, imagens e interações
-        run: python scripts/browser_qa.py
-      - name: Empacotar código, mídia e prévias da revisão
+      - name: Validar responsividade e interações
+        run: python scripts/browser_qa_v3.py
+      - name: Versionar fonte final e evidências
+        run: |
+          git add src/index.html qa/v3
+          if ! git diff --cached --quiet; then
+            git config user.name 'github-actions[bot]'
+            git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+            git commit -m 'feat: consolida layout editorial e QA v3 [skip ci]'
+            git push origin HEAD:feat/saude-shalon-lp
+          fi
+      - name: Conferir prévia pela integração GitHub
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: node scripts/collect-preview.mjs
+      - name: Empacotar projeto e evidências
         uses: actions/upload-artifact@v7
         with:
-          name: Saude-Shalon-LP-v2
-          retention-days: 7
+          name: Saude-Shalon-LP-v3
+          retention-days: 14
           if-no-files-found: error
           path: |
             src/
@@ -37,19 +51,10 @@ jobs:
             scripts/
             tests/
             docs/
-            qa/v2/
+            qa/v3/
             dist/
             package.json
             site.config.mjs
             assets.manifest.json
             vercel.json
             README.md
-      - name: Versionar evidências e mídia pública
-        run: |
-          git add public/assets public/reference-media.json qa/v2
-          if ! git diff --cached --quiet; then
-            git config user.name 'github-actions[bot]'
-            git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-            git commit -m 'test: registra revisão visual e validação responsiva da LP [skip ci]'
-            git push origin HEAD:feat/saude-shalon-lp
-          fi
