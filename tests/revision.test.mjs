@@ -21,4 +21,4 @@ test('hero não mantém assinatura lateral duplicada',()=>{const hero=html.slice
 
 test('privacidade não ocupa seção própria',()=>{assert.ok(!html.includes('privacy-strip'));assert.ok(html.includes('href="/privacidade.html"'));});
 test('correção mobile evita assinatura absoluta da autoridade',()=>{assert.ok(css.includes('@media(max-width:820px)'));assert.ok(css.includes('.authority-v5-signature{\n    position:static;'));});
-test('hero mobile possui ajuste focal dedicado',()=>{assert.ok(css.includes('V7 · Correções mobile'));assert.ok(css.includes('transform:scale(1.04) translateX(10%)'));});
+test('hero mobile possui ajuste focal dedicado',()=>{assert.ok(css.includes('V7 · Correções mobile'));assert.ok(css.includes('object-position:32% 38%'));});
