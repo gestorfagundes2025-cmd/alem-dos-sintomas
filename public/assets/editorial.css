@@ -744,7 +744,7 @@ html{scroll-padding-top:100px}body{font-size:18px}.wrap{width:min(100% - 80px,12
   .hero-v5 .hero-photo-v5 img{
     max-width:none;
     width:100%;
-    object-position:38% 38%;
+    object-position:24% 38%;
     transform:scale(1.035);
   }
   .hero-v5 .hero-shade-v5{
@@ -781,7 +781,7 @@ html{scroll-padding-top:100px}body{font-size:18px}.wrap{width:min(100% - 80px,12
   }
   .hero-v5 .hero-photo-v5 img{
     width:100%;
-    object-position:32% 38%;
+    object-position:18% 38%;
     transform:scale(1.035);
   }
   .hero-v5 h1{
