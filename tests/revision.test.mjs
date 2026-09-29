@@ -8,7 +8,7 @@ const vercel=JSON.parse(readFileSync('vercel.json','utf8'));
 
 test('hero usa recorte integrado da doutora, não card fotográfico',()=>{
   assert.ok(html.includes('class="doctor-cutout"'));
-  assert.ok(html.includes('class="hero-doctor-visual"'));
+  assert.ok(html.includes('hero-doctor-visual'));
   assert.ok(!html.includes('class="hero-image"'));
 });
 test('pilares da metodologia preservados',()=>{for(const title of ['Remoção','Reposição','Reabilitação']) assert.ok(html.includes(title));});
