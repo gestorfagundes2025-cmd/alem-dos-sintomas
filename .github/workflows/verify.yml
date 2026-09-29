@@ -22,15 +22,15 @@ jobs:
       - run: npm run build
       - name: Preparar testes de navegador
         run: python -m pip install 'playwright>=1.55,<2'
-      - name: Validar responsividade, imagens e microinterações
-        run: python scripts/browser_qa_v4.py
-      - name: Versionar novo acervo e evidências
+      - name: Validar primeira dobra, responsividade e integração visual
+        run: python scripts/browser_qa_v5.py
+      - name: Versionar evidências da revisão final
         run: |
-          git add public/assets/dra-elizete-mentora.jpg public/assets/dra-elizete-mentora-mobile.jpg public/assets/equipe-saude-shalon.jpg public/assets/registro-premiacao.jpg qa/v4
+          git add qa/v5
           if ! git diff --cached --quiet; then
             git config user.name 'github-actions[bot]'
             git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-            git commit -m 'chore: versiona acervo selecionado e QA v4 [skip ci]'
+            git commit -m 'chore: registra QA final v5 [skip ci]'
             git push origin HEAD:feat/saude-shalon-lp
           fi
       - name: Conferir prévia pela integração GitHub
@@ -40,7 +40,7 @@ jobs:
       - name: Empacotar projeto e evidências
         uses: actions/upload-artifact@v7
         with:
-          name: Saude-Shalon-LP-v4
+          name: Saude-Shalon-LP-v5
           retention-days: 14
           if-no-files-found: error
           path: |
@@ -49,7 +49,7 @@ jobs:
             scripts/
             tests/
             docs/
-            qa/v4/
+            qa/v5/
             dist/
             package.json
             site.config.mjs
