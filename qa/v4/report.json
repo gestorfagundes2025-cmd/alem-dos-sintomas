@@ -1,0 +1,316 @@
+{
+  "widths": [
+    {
+      "viewport": 320,
+      "document": 320,
+      "doctor_width": 339.8,
+      "doctor_height": 339.8
+    },
+    {
+      "viewport": 360,
+      "document": 360,
+      "doctor_width": 387.0,
+      "doctor_height": 387.0
+    },
+    {
+      "viewport": 375,
+      "document": 375,
+      "doctor_width": 395.3,
+      "doctor_height": 395.3
+    },
+    {
+      "viewport": 390,
+      "document": 390,
+      "doctor_width": 413,
+      "doctor_height": 413
+    },
+    {
+      "viewport": 430,
+      "document": 430,
+      "doctor_width": 460.2,
+      "doctor_height": 460.2
+    },
+    {
+      "viewport": 600,
+      "document": 600,
+      "doctor_width": 620,
+      "doctor_height": 620
+    },
+    {
+      "viewport": 768,
+      "document": 768,
+      "doctor_width": 378,
+      "doctor_height": 378
+    },
+    {
+      "viewport": 820,
+      "document": 820,
+      "doctor_width": 378,
+      "doctor_height": 378
+    },
+    {
+      "viewport": 1024,
+      "document": 1024,
+      "doctor_width": 449.0,
+      "doctor_height": 449.0
+    },
+    {
+      "viewport": 1280,
+      "document": 1280,
+      "doctor_width": 558.5,
+      "doctor_height": 558.5
+    },
+    {
+      "viewport": 1440,
+      "document": 1440,
+      "doctor_width": 577.4,
+      "doctor_height": 577.4
+    },
+    {
+      "viewport": 1920,
+      "document": 1920,
+      "doctor_width": 577.4,
+      "doctor_height": 577.4
+    }
+  ],
+  "errors": [],
+  "image_failures": [],
+  "fonts": [
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "loaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "loaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "loaded"
+    },
+    {
+      "family": "Source Serif 4",
+      "status": "unloaded"
+    },
+    {
+      "family": "Source Serif 4",
+      "status": "unloaded"
+    },
+    {
+      "family": "Source Serif 4",
+      "status": "unloaded"
+    },
+    {
+      "family": "Source Serif 4",
+      "status": "unloaded"
+    },
+    {
+      "family": "Source Serif 4",
+      "status": "unloaded"
+    },
+    {
+      "family": "Source Serif 4",
+      "status": "loaded"
+    },
+    {
+      "family": "Source Serif 4",
+      "status": "unloaded"
+    },
+    {
+      "family": "Source Serif 4",
+      "status": "unloaded"
+    },
+    {
+      "family": "Source Serif 4",
+      "status": "unloaded"
+    },
+    {
+      "family": "Source Serif 4",
+      "status": "unloaded"
+    },
+    {
+      "family": "Source Serif 4",
+      "status": "unloaded"
+    },
+    {
+      "family": "Source Serif 4",
+      "status": "loaded"
+    },
+    {
+      "family": "Source Serif 4",
+      "status": "unloaded"
+    },
+    {
+      "family": "Source Serif 4",
+      "status": "unloaded"
+    },
+    {
+      "family": "Source Serif 4",
+      "status": "unloaded"
+    },
+    {
+      "family": "Source Serif 4",
+      "status": "unloaded"
+    },
+    {
+      "family": "Source Serif 4",
+      "status": "unloaded"
+    },
+    {
+      "family": "Source Serif 4",
+      "status": "loaded"
+    },
+    {
+      "family": "Source Serif 4",
+      "status": "unloaded"
+    },
+    {
+      "family": "Source Serif 4",
+      "status": "unloaded"
+    },
+    {
+      "family": "Source Serif 4",
+      "status": "unloaded"
+    },
+    {
+      "family": "Source Serif 4",
+      "status": "unloaded"
+    },
+    {
+      "family": "Source Serif 4",
+      "status": "unloaded"
+    },
+    {
+      "family": "Source Serif 4",
+      "status": "loaded"
+    },
+    {
+      "family": "Source Serif 4",
+      "status": "unloaded"
+    },
+    {
+      "family": "Source Serif 4",
+      "status": "unloaded"
+    },
+    {
+      "family": "Source Serif 4",
+      "status": "unloaded"
+    },
+    {
+      "family": "Source Serif 4",
+      "status": "unloaded"
+    },
+    {
+      "family": "Source Serif 4",
+      "status": "unloaded"
+    },
+    {
+      "family": "Source Serif 4",
+      "status": "unloaded"
+    }
+  ],
+  "checks": [
+    "12 larguras sem overflow",
+    "hero com Dra. Elizete integrada",
+    "4 ícones de prova",
+    "texto principal >=16px",
+    "um H1",
+    "oferta em segunda seção",
+    "sem preços/formulário",
+    "animação de CTA",
+    "X animado",
+    "WhatsApp sem número abre aviso",
+    "Escape devolve foco",
+    "menu móvel",
+    "FAQ",
+    "recursos",
+    "novo acervo carregado",
+    "movimento reduzido",
+    "YouTube sob clique"
+  ],
+  "result": "passed"
+}
