@@ -8,7 +8,7 @@ test('versão editorial v6 identificada',()=>assert.ok(html.includes('data-edito
 test('hero mantém a fotografia aprovada e remove bloco lateral redundante',()=>{
   const hero=html.slice(html.indexOf('id="inicio"'),html.indexOf('id="atendimento"'));
   assert.ok(hero.includes('Você não precisa'));
-  assert.ok(hero.includes('/assets/atividade-profissional.jpg'));
+  assert.ok(hero.includes('/assets/atividade-profissional.webp'));
   assert.ok(hero.includes('Quero conhecer a avaliação'));
   assert.ok(hero.includes('Dra. Elizete Kaffer'));
   assert.ok(!hero.includes('A ORIGEM DO NOSSO OLHAR'));
@@ -25,13 +25,13 @@ test('tecnologia continua com linhas sobre imagem integrada',()=>{
 });
 test('jornada usa ambiente real da clínica e contraste v6',()=>{
   const journey=html.slice(html.indexOf('id="jornada"'),html.indexOf('id="equipe"'));
-  assert.ok(journey.includes('/assets/clinica-recepcao.jpg'));
+  assert.ok(journey.includes('/assets/clinica-recepcao.webp'));
   assert.ok(css.includes('Jornada: fotografia de ambiente real + contraste alto'));
   assert.ok(css.includes('.journey-v5 .journey-shade'));
 });
 test('seção de espaço usa três fotografias reais do acervo',()=>{
   const space=html.slice(html.indexOf('id="espaco"'),html.indexOf('privacy-strip'));
-  for(const src of ['/assets/clinica-recepcao.jpg','/assets/clinica-espera.jpg','/assets/clinica-corredor.jpg']) assert.ok(space.includes(src));
+  for(const src of ['/assets/clinica-recepcao.webp','/assets/clinica-espera.webp','/assets/clinica-corredor.webp']) assert.ok(space.includes(src));
   assert.ok(space.includes('Conheça o espaço'));
 });
 test('privacidade aparece antes do FAQ e aponta para a política',()=>{
