@@ -18,3 +18,7 @@ test('CSP continua sem unsafe-inline',()=>{const policy=vercel.headers.flatMap(x
 test('espaço da clínica vem antes das dúvidas',()=>assert.ok(html.indexOf('id="espaco"')<html.indexOf('id="duvidas"')));
 test('jornada não usa mais fotografia do equipamento corporal',()=>{const journey=html.slice(html.indexOf('id="jornada"'),html.indexOf('id="equipe"'));assert.ok(!journey.includes('/assets/avaliacao-corporal.jpg'));assert.ok(journey.includes('/assets/clinica-recepcao.webp'));});
 test('hero não mantém assinatura lateral duplicada',()=>{const hero=html.slice(html.indexOf('id="inicio"'),html.indexOf('id="atendimento"'));assert.ok(!hero.includes('hero-signature'));});
+
+test('privacidade não ocupa seção própria',()=>{assert.ok(!html.includes('privacy-strip'));assert.ok(html.includes('href="/privacidade.html"'));});
+test('correção mobile evita assinatura absoluta da autoridade',()=>{assert.ok(css.includes('@media(max-width:820px)'));assert.ok(css.includes('.authority-v5-signature{\n    position:static;'));});
+test('hero mobile possui ajuste focal dedicado',()=>{assert.ok(css.includes('V7 · Correções mobile'));assert.ok(css.includes('transform:scale(1.04) translateX(10%)'));});
