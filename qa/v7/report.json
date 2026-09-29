@@ -1,0 +1,290 @@
+{
+  "viewports": [
+    {
+      "width": 320,
+      "height": 720,
+      "cta_bottom": 615.0
+    },
+    {
+      "width": 360,
+      "height": 800,
+      "cta_bottom": 604.9
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "cta_bottom": 620.7
+    },
+    {
+      "width": 430,
+      "height": 860,
+      "cta_bottom": 639.5
+    },
+    {
+      "width": 768,
+      "height": 900,
+      "cta_bottom": 635.5
+    },
+    {
+      "width": 1024,
+      "height": 768,
+      "cta_bottom": 579.0
+    },
+    {
+      "width": 1280,
+      "height": 800,
+      "cta_bottom": 582.4
+    },
+    {
+      "width": 1440,
+      "height": 768,
+      "cta_bottom": 582.4
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "cta_bottom": 614.4
+    },
+    {
+      "width": 1920,
+      "height": 1080,
+      "cta_bottom": 651.3
+    }
+  ],
+  "errors": [],
+  "fonts": [
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "loaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "loaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "unloaded"
+    },
+    {
+      "family": "Manrope",
+      "status": "loaded"
+    },
+    {
+      "family": "Source Serif 4",
+      "status": "unloaded"
+    },
+    {
+      "family": "Source Serif 4",
+      "status": "unloaded"
+    },
+    {
+      "family": "Source Serif 4",
+      "status": "unloaded"
+    },
+    {
+      "family": "Source Serif 4",
+      "status": "unloaded"
+    },
+    {
+      "family": "Source Serif 4",
+      "status": "unloaded"
+    },
+    {
+      "family": "Source Serif 4",
+      "status": "loaded"
+    },
+    {
+      "family": "Source Serif 4",
+      "status": "unloaded"
+    },
+    {
+      "family": "Source Serif 4",
+      "status": "unloaded"
+    },
+    {
+      "family": "Source Serif 4",
+      "status": "unloaded"
+    },
+    {
+      "family": "Source Serif 4",
+      "status": "unloaded"
+    },
+    {
+      "family": "Source Serif 4",
+      "status": "unloaded"
+    },
+    {
+      "family": "Source Serif 4",
+      "status": "unloaded"
+    },
+    {
+      "family": "Source Serif 4",
+      "status": "unloaded"
+    },
+    {
+      "family": "Source Serif 4",
+      "status": "unloaded"
+    },
+    {
+      "family": "Source Serif 4",
+      "status": "unloaded"
+    },
+    {
+      "family": "Source Serif 4",
+      "status": "unloaded"
+    },
+    {
+      "family": "Source Serif 4",
+      "status": "unloaded"
+    },
+    {
+      "family": "Source Serif 4",
+      "status": "loaded"
+    },
+    {
+      "family": "Source Serif 4",
+      "status": "unloaded"
+    },
+    {
+      "family": "Source Serif 4",
+      "status": "unloaded"
+    },
+    {
+      "family": "Source Serif 4",
+      "status": "unloaded"
+    },
+    {
+      "family": "Source Serif 4",
+      "status": "unloaded"
+    },
+    {
+      "family": "Source Serif 4",
+      "status": "unloaded"
+    },
+    {
+      "family": "Source Serif 4",
+      "status": "loaded"
+    },
+    {
+      "family": "Source Serif 4",
+      "status": "unloaded"
+    },
+    {
+      "family": "Source Serif 4",
+      "status": "unloaded"
+    },
+    {
+      "family": "Source Serif 4",
+      "status": "unloaded"
+    },
+    {
+      "family": "Source Serif 4",
+      "status": "unloaded"
+    },
+    {
+      "family": "Source Serif 4",
+      "status": "unloaded"
+    },
+    {
+      "family": "Source Serif 4",
+      "status": "unloaded"
+    }
+  ],
+  "checks": [
+    "10 viewports sem overflow",
+    "CTA visível na primeira dobra crítica",
+    "hero sem assinatura lateral redundante",
+    "jornada com foto real da clínica",
+    "galeria do espaço",
+    "bloco de privacidade",
+    "seção de tecnologia preservada",
+    "scroll reveal",
+    "parallax",
+    "hover de CTA",
+    "X animado",
+    "menu mobile",
+    "imagens carregadas",
+    "YouTube sob clique"
+  ],
+  "result": "passed"
+}
