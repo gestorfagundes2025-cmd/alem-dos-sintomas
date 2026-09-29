@@ -45,8 +45,10 @@ try:
 
             # Background treatment is native to sections.
             for selector in ['.resources-backdrop img','.journey-backdrop img','.authority-background img']:
-                assert page.locator(selector).count()==1
-                assert page.locator(selector).evaluate('(e)=>e.complete && e.naturalWidth>0')
+                media=page.locator(selector)
+                assert media.count()==1
+                media.scroll_into_view_if_needed()
+                page.wait_for_function("(sel)=>{const e=document.querySelector(sel);return e&&e.complete&&e.naturalWidth>0}",arg=selector,timeout=30000)
 
             # Scroll reveal is visibly active and resolves after entry.
             target=page.locator('.resources-v5-intro')
