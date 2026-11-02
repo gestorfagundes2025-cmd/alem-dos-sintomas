@@ -3,6 +3,18 @@ import path from 'node:path';
 import vm from 'node:vm';
 import assert from 'node:assert/strict';
 const root = path.resolve('dist');
+const configContext={window:{}};
+vm.runInNewContext(fs.readFileSync('dist/assets/config.js','utf8'),configContext);
+const config=configContext.window.JORNADA_CONFIG;
+const index=fs.readFileSync('dist/index.html','utf8');
+assert.equal(config.eventStart,'2026-11-11T19:00:00-03:00');
+assert(index.includes(`data-event-start="${config.eventStart}"`),'Countdown fallback agrees with config');
+assert(!/23\/09|23 de setembro|23 SET|2026-09-23/.test(index),'No first-edition dates in public HTML');
+assert(index.includes('2ª edição')&&index.includes('11 NOV / 2026'));
+for(const meta of ['og:title','og:description','twitter:title','twitter:description']) assert(index.includes(`="${meta}"`));
+assert.equal(config.checkoutUrl,'https://pay.hub.la/u4gdUmckM4Y0xMqv9e5W','Payment destination unchanged');
+assert.equal(config.ticketPrice,69,'Price unchanged pending confirmation');
+assert.equal(config.checkoutEnabled,false,'Unavailable Hubla offer remains paused until approved');
 for (const file of ['index.html','privacidade.html']) {
   const html = fs.readFileSync(path.join(root, file), 'utf8');
   assert.equal((html.match(/<h1[ >]/g) || []).length, 1, `${file}: one h1`);
@@ -14,11 +26,11 @@ for (const file of ['index.html','privacidade.html']) {
   }
 }
 const main = fs.readFileSync('dist/assets/main.js', 'utf8');
-const run = (url, now = Date.parse('2026-09-09T12:00:00-03:00')) => {
+const run = (url, now = Date.parse('2026-11-02T12:00:00-03:00')) => {
   const cta = {dataset:{location:'test'}, attrs:{'aria-disabled':'true'}, handlers:{}, setAttribute(k,v){this.attrs[k]=v}, removeAttribute(k){delete this.attrs[k]}, addEventListener(k,cb){this.handlers[k]=cb}};
   const price = {};
   const notice = {hidden:false,scrollIntoView(){}};
-  const ctx = {URL,URLSearchParams,Intl,Number,Date:class extends Date{static now(){return now}},CustomEvent:class{},window:{JORNADA_CONFIG:{checkoutUrl:url,ticketPrice:69,eventStart:'2026-09-23T19:00:00-03:00'},location:{search:'?utm_source=instagram&unapproved=private'},matchMedia(){return {matches:true}},dispatchEvent(){},addEventListener(){}},document:{querySelectorAll(s){return s==='[data-price]'?[price]:[cta]},getElementById(s){return s==='preview-notice'?notice:null},querySelector(){return null}}};
+  const ctx = {URL,URLSearchParams,Intl,Number,Date:class extends Date{static now(){return now}},CustomEvent:class{},window:{JORNADA_CONFIG:{checkoutEnabled:true,checkoutUrl:url,ticketPrice:69,eventStart:'2026-11-11T19:00:00-03:00'},location:{search:'?utm_source=instagram&unapproved=private'},matchMedia(){return {matches:true}},dispatchEvent(){},addEventListener(){}},document:{querySelectorAll(s){return s==='[data-price]'?[price]:[cta]},getElementById(s){return s==='preview-notice'?notice:null},querySelector(){return null}}};
   vm.runInNewContext(main, ctx);
   return {cta,notice,price};
 };
@@ -40,7 +52,7 @@ assert.equal(destination.searchParams.get('unapproved'),null);
 assert(price.textContent.includes('69'));
 assert(!main.includes('fbq('));
 assert(!main.includes('localStorage'));
-const closed=run('https://pay.hub.la/test-only',Date.parse('2026-09-23T22:00:00Z'));
+const closed=run('https://pay.hub.la/test-only',Date.parse('2026-11-11T22:00:00Z'));
 assert.equal(closed.cta.attrs['aria-disabled'],'true');
 assert.equal(closed.cta.href,'#participar');
 let prevented=false;

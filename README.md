@@ -1,5 +1,34 @@
 # Jornada Além dos Sintomas
 
+## Estado atual — segunda edição, revisão de 02/11/2026
+
+**Evento: quarta-feira, 11/11/2026, às 19h de Brasília (`2026-11-11T19:00:00-03:00`, 22h UTC).** A configuração, os textos visíveis, a faixa, o ingresso, o FAQ, o rodapé, a barra móvel, o fallback sem JavaScript e os metadados refletem a segunda edição. O visual, as fotografias, o e-book, a oferta e a marca aprovados foram preservados.
+
+**Inscrições temporariamente indisponíveis.** A URL preservada `https://pay.hub.la/u4gdUmckM4Y0xMqv9e5W` exibiu na Hubla: “Ops! Esta oferta pode estar esgotada ou não está mais disponível.” Por isso, `checkoutEnabled: false` impede redirecionamentos e AddToCart. Atualizar a data, sozinho, abriria os botões para uma oferta indisponível. Não foi feita compra, cadastro, geração de Pix ou alteração na Hubla.
+
+### Origem publicada identificada
+
+- Produção: https://alem-dos-sintomas.vercel.app/ . A Vercel identificou o projeto `alem-dos-sintomas` (`prj_qA6iQxvnfVZJvMiyePXlLXfdf6j8`) e o commit anterior `ae2144b2373516ad83aeb907a1b28f17db0a50ae`, branch `main`, publicado em 18/09/2026. A página aberta no navegador mostrava 23/09 e os quatro CTAs encerrados.
+- Há builds mais recentes em `feat/saude-shalon-lp`, de outro trabalho, sem substituir a produção do evento. Essa branch não foi modificada.
+- https://instituto.shalon.com.br/ é uma página institucional com quiz, não a LP desse evento. Não foi modificada. Ainda é necessário confirmar qual URL está efetivamente nos anúncios da segunda edição, caso usem outro domínio ou uma cópia na HostGator.
+
+### O que falta para liberar inscrições
+
+1. O responsável deve reativar a oferta correta na Hubla ou confirmar a URL da segunda edição, com data, acesso ao grupo/aula e entrega do e-book. Não substituir `checkoutUrl` sem essa confirmação.
+2. Confirmar o valor final. Permanecem **R$ 69 no código e na mensuração**. R$ 69,90 é uma divergência histórica do checkout; o preço atual não pôde ser lido porque a oferta está indisponível. Não foi alterado nenhum valor.
+3. Confirmar a identidade do produto na Hubla. `ticketId: jornada_16092026` foi preservado para não romper o vínculo comercial sem evidência. A segunda edição é identificada separadamente por `eventEdition: jornada_20261111_edicao2` no AddToCart.
+4. Após essas confirmações, aplicar somente as mudanças aprovadas, definir `checkoutEnabled: true`, atualizar a expectativa de pausa em `check-site.mjs`, executar `npm run check`, publicar e conferir os quatro CTAs no navegador.
+5. No Gerenciador de Eventos/integração da Hubla, validar Purchase somente após pagamento confirmado, no pixel `2283183939189207`, com valor/moeda reais. Se a Hubla enviar navegador + servidor, verificar a deduplicação com o mesmo nome e identificador do evento. Não adicionar outro encaminhador de `dataLayer` via GTM nem regras automáticas nos mesmos botões. Essa configuração externa não foi acessada ou alterada.
+
+### Mensuração e verificações desta revisão
+
+- SDK nativo do Meta e configuração do pixel foram observados carregados na publicação; não há contêiner GTM no HTML/DOM inspecionado. Isso não comprova recebimento no Gerenciador de Eventos, regras remotas nem Purchase da Hubla.
+- PageView permanece na visita. AddToCart só ocorre com checkout habilitado, data válida, antes do prazo e ação válida. Não há Purchase, Lead ou InitiateCheckout disparados pela LP.
+- Proteções contra reinicialização da interface/Pixel, duplo clique e saída atrasada após o prazo. Checkout pausado, URL inválida e data inválida bloqueiam os quatro CTAs, inclusive botão central, sem conversão.
+- `npm run check`: arquivos/âncoras, coerência de datas e metadados, 11/11 às 22h UTC, viradas do relógio, aba suspensa, expiração, quatro posições de CTA, valor/moeda, identificadores, UTMs/fbclid, retorno do navegador e deduplicação local. SDK simulado nos testes; nenhum evento de compra ou pagamento é enviado.
+
+As seções seguintes registram o histórico da primeira edição; em caso de divergência de data ou disponibilidade, prevalece esta seção e a configuração atual.
+
 Landing page estática criada a partir da identidade, logotipo e foto real da Dra. Elizete presentes no ZIP fornecido. O quiz original não foi modificado.
 
 ## Antes de receber tráfego

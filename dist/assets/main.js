@@ -1,5 +1,7 @@
 (() => {
   "use strict";
+  if (window.JORNADA_UI_INITIALIZED) return;
+  window.JORNADA_UI_INITIALIZED = true;
   const config = window.JORNADA_CONFIG || {};
   const eventStart = Date.parse(config.eventStart);
   const hasStarted = () => Number.isFinite(eventStart) && Date.now() >= eventStart;
@@ -12,7 +14,8 @@
   try {
     const candidate = new URL(config.checkoutUrl);
     // Restringe o destino à plataforma definida pelo cliente. Não aceita URL pela querystring.
-    if (candidate.protocol === "https:" && !candidate.username && !candidate.password &&
+    if (config.checkoutEnabled === true && Number.isFinite(eventStart) &&
+        candidate.protocol === "https:" && !candidate.username && !candidate.password &&
         (candidate.hostname === "hub.la" || candidate.hostname.endsWith(".hub.la") ||
          candidate.hostname === "hubla.com.br" || candidate.hostname.endsWith(".hubla.com.br"))) {
       checkout = candidate;
@@ -59,7 +62,10 @@
         if (window.JORNADA_TRACKING && event.button !== 1 && !event.ctrlKey && !event.metaKey && !event.shiftKey && !event.altKey && (!cta.target || cta.target === "_self")) {
           event.preventDefault();
           navigationPending = true;
-          window.setTimeout(() => { window.location.assign(cta.href); }, 350);
+          window.setTimeout(() => {
+            if (hasStarted()) { closeRegistrations(); navigationPending = false; return; }
+            window.location.assign(cta.href);
+          }, 350);
         }
       };
       cta.addEventListener("click", handleCheckout);
@@ -67,15 +73,26 @@
     });
     window.addEventListener("pageshow", () => { navigationPending = false; });
   } else {
-    ctas.forEach(cta => cta.addEventListener("click", event => {
+    if (notice) {
+      notice.hidden = false;
+      notice.textContent = "As inscrições para a 2ª edição estão temporariamente indisponíveis.";
+    }
+    const unavailableClick = event => {
       event.preventDefault();
       if (hasStarted()) { closeRegistrations(); return; }
       if (notice) {
         notice.hidden = false;
-        notice.textContent = "As inscrições ainda não estão disponíveis. O link de pagamento será disponibilizado em breve.";
+        notice.textContent = "As inscrições para a 2ª edição estão temporariamente indisponíveis.";
         notice.scrollIntoView({behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth", block: "start"});
       }
-    }));
+    };
+    ctas.forEach(cta => {
+      cta.setAttribute("aria-disabled", "true");
+      cta.href = "#participar";
+      cta.textContent = "Inscrições indisponíveis";
+      cta.addEventListener("click", unavailableClick);
+      cta.addEventListener("auxclick", event => { if (event.button === 1) unavailableClick(event); });
+    });
   }
   if (hasStarted()) closeRegistrations();
   const ribbonToggle = document.getElementById("ribbon-toggle");

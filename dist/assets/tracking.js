@@ -33,8 +33,9 @@
     const placement = event.detail && event.detail.placement;
     const now = Date.now();
     const start = Date.parse(config.eventStart);
-    if (!placements.has(placement) || !Number.isFinite(price) || price <= 0 ||
-        (Number.isFinite(start) && now >= start) || now - lastClick < 1000) return;
+    if (config.checkoutEnabled !== true || !Number.isFinite(start) ||
+        !placements.has(placement) || !Number.isFinite(price) || price <= 0 ||
+        now >= start || now - lastClick < 1000) return;
     lastClick = now;
     emit('AddToCart', 'add_to_cart', {
       value: price,
@@ -43,6 +44,7 @@
       content_type: 'product',
       contents: [{ id: config.ticketId, quantity: 1, item_price: price }],
       num_items: 1,
+      event_edition: config.eventEdition,
       button_location: placement
     });
   });
