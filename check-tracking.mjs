@@ -12,8 +12,8 @@ function setup({closed=false, invalid=false, existing=false, paused=false, inval
   const document={createElement(){return {}},getElementsByTagName(){return [{parentNode:{insertBefore(el){inserted.push(el)}}}]},querySelectorAll(s){return s==='[data-price]'?[]:ctas},getElementById(){return null},querySelector(){return null}};
   const ctx=vm.createContext({window,document,URL,URLSearchParams,Intl,Number,Date:class extends Date {static now(){return now}},CustomEvent:class{constructor(type,options){this.type=type;this.detail=options.detail}}});
   vm.runInContext(source.config,ctx);
-  // Test the approved-checkout path separately; production stays paused.
-  window.JORNADA_CONFIG={...window.JORNADA_CONFIG,checkoutEnabled:!paused};
+  // Exercise the real configuration; pause only for the unavailable-offer case.
+  if(paused)window.JORNADA_CONFIG={...window.JORNADA_CONFIG,checkoutEnabled:false};
   if(invalid)window.JORNADA_CONFIG={...window.JORNADA_CONFIG,checkoutUrl:'https://evil.example/'};
   if(invalidDate)window.JORNADA_CONFIG={...window.JORNADA_CONFIG,eventStart:'invalid'};
   vm.runInContext(source.tracking,ctx);vm.runInContext(source.main,ctx);
@@ -30,7 +30,7 @@ for(let i=0;i<4;i++) {
   assert.equal(ad[3].event_edition,'jornada_20261111_edicao2');
   assert.equal(ad[3].content_ids[0],'jornada_16092026','Commercial product ID is preserved pending Hubla confirmation');
   assert.equal(x.timers.length,1);x.timers[0]();assert.equal(x.redirects.length,1);
-  const url=new URL(x.redirects[0]);assert.equal(url.hostname,'pay.hub.la');assert.equal(url.searchParams.get('fbclid'),'test-click-id');assert.equal(url.searchParams.get('utm_source'),'meta');assert(!url.searchParams.has('email'));
+  const url=new URL(x.redirects[0]);assert.equal(url.origin+url.pathname,'https://pay.hub.la/qvT6cLhJVdKNMx8nD0Cm');assert.equal(url.searchParams.get('fbclid'),'test-click-id');assert.equal(url.searchParams.get('utm_source'),'meta');assert(!url.searchParams.has('email'));
   x.window.dispatchEvent({type:'pageshow'});x.click(i);assert.equal(x.events().length,3,'Back navigation permits a new action');
 }
 for(const option of [{closed:true},{invalid:true},{paused:true},{invalidDate:true}]) {

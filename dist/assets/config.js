@@ -1,10 +1,9 @@
 /* Alterar somente após validar o destino exato da oferta na Hubla.
    Link vazio = prévia: nenhuma compra é simulada nem redirecionada. */
 window.JORNADA_CONFIG = Object.freeze({
-  checkoutUrl: "https://pay.hub.la/u4gdUmckM4Y0xMqv9e5W",
-  // Oferta indisponível na Hubla em 02/11/2026. Reabrir somente após
-  // confirmar destino, preço e entrega da segunda edição com o responsável.
-  checkoutEnabled: false,
+  checkoutUrl: "https://pay.hub.la/qvT6cLhJVdKNMx8nD0Cm",
+  // Novo destino de inscrição confirmado pelo responsável em 03/11/2026.
+  checkoutEnabled: true,
   metaPixelId: "2283183939189207",
   // ID comercial preservado até confirmar o produto da segunda edição na Hubla.
   ticketId: "jornada_16092026",

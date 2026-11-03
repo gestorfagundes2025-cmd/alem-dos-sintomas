@@ -12,9 +12,9 @@ assert(index.includes(`data-event-start="${config.eventStart}"`),'Countdown fall
 assert(!/23\/09|23 de setembro|23 SET|2026-09-23/.test(index),'No first-edition dates in public HTML');
 assert(index.includes('2ª edição')&&index.includes('11 NOV / 2026'));
 for(const meta of ['og:title','og:description','twitter:title','twitter:description']) assert(index.includes(`="${meta}"`));
-assert.equal(config.checkoutUrl,'https://pay.hub.la/u4gdUmckM4Y0xMqv9e5W','Payment destination unchanged');
+assert.equal(config.checkoutUrl,'https://pay.hub.la/qvT6cLhJVdKNMx8nD0Cm','Approved payment destination');
 assert.equal(config.ticketPrice,69,'Price unchanged pending confirmation');
-assert.equal(config.checkoutEnabled,false,'Unavailable Hubla offer remains paused until approved');
+assert.equal(config.checkoutEnabled,true,'Approved checkout is enabled');
 for (const file of ['index.html','privacidade.html']) {
   const html = fs.readFileSync(path.join(root, file), 'utf8');
   assert.equal((html.match(/<h1[ >]/g) || []).length, 1, `${file}: one h1`);
