@@ -1,5 +1,10 @@
 # Jornada Além dos Sintomas
 
+## Remarcação — 12/11/2026
+
+Evento remarcado para **quarta-feira, 18/11/2026, às 19h de Brasília** (`2026-11-18T19:00:00-03:00`, 22h UTC). Todas as datas públicas, metadados, fallback e contador foram atualizados. Preço, checkout habilitado, URL da Hubla e ID comercial permanecem inalterados. O identificador analítico da edição reflete a nova data. As seções abaixo são histórico e não definem a data atual.
+
+
 ## Estado atual — segunda edição, revisão de 02/11/2026
 
 **Evento: quarta-feira, 11/11/2026, às 19h de Brasília (`2026-11-11T19:00:00-03:00`, 22h UTC).** A configuração, os textos visíveis, a faixa, o ingresso, o FAQ, o rodapé, a barra móvel, o fallback sem JavaScript e os metadados refletem a segunda edição. O visual, as fotografias, o e-book, a oferta e a marca aprovados foram preservados.

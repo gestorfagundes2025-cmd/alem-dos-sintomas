@@ -3,8 +3,8 @@ import vm from 'node:vm';
 import assert from 'node:assert/strict';
 const source = Object.fromEntries(['config','tracking','main'].map(n=>[n,fs.readFileSync(`dist/assets/${n}.js`,'utf8')]));
 function setup({closed=false, invalid=false, existing=false, paused=false, invalidDate=false, beforeStartMs=null}={}) {
-  let now=Date.parse(closed?'2026-11-12T00:00:00Z':'2026-11-02T12:00:00Z');
-  if (beforeStartMs !== null) now = Date.parse('2026-11-11T22:00:00Z') - beforeStartMs;
+  let now=Date.parse(closed?'2026-11-19T00:00:00Z':'2026-11-12T12:00:00Z');
+  if (beforeStartMs !== null) now = Date.parse('2026-11-18T22:00:00Z') - beforeStartMs;
   const listeners={}, inserted=[], timers=[], redirects=[];
   const ctas=['hero','content','ticket','mobile'].map(placement=>({dataset:{location:placement},attrs:{},handlers:{},setAttribute(k,v){this.attrs[k]=v},removeAttribute(k){delete this.attrs[k]},addEventListener(k,v){this.handlers[k]=v}}));
   const window={location:{search:'?utm_source=meta&fbclid=test-click-id&email=not-forwarded',assign(url){redirects.push(url)}},addEventListener(n,f){(listeners[n]??=[]).push(f)},dispatchEvent(e){for(const f of listeners[e.type]||[]) f(e)},setTimeout(f){timers.push(f)},matchMedia(){return {matches:true}}};
@@ -27,7 +27,7 @@ for(let i=0;i<4;i++) {
   x.click(i);x.click(i);assert.equal(x.events().length,2,'Double click counted once');
   const ad=x.events()[1];assert.equal(ad[1],'2283183939189207');assert.equal(ad[2],'AddToCart');assert.equal(ad[3].value,69);assert.equal(ad[3].currency,'BRL');assert.equal(ad[3].contents[0].quantity,1);assert.equal(ad[3].button_location,x.ctas[i].dataset.location);
   assert.equal(x.window.dataLayer[1].event_id,ad[4].eventID);assert.equal(x.window.dataLayer[1].event,'add_to_cart');
-  assert.equal(ad[3].event_edition,'jornada_20261111_edicao2');
+  assert.equal(ad[3].event_edition,'jornada_20261118_edicao2');
   assert.equal(ad[3].content_ids[0],'jornada_16092026','Commercial product ID is preserved pending Hubla confirmation');
   assert.equal(x.timers.length,1);x.timers[0]();assert.equal(x.redirects.length,1);
   const url=new URL(x.redirects[0]);assert.equal(url.origin+url.pathname,'https://pay.hub.la/qvT6cLhJVdKNMx8nD0Cm');assert.equal(url.searchParams.get('fbclid'),'test-click-id');assert.equal(url.searchParams.get('utm_source'),'meta');assert(!url.searchParams.has('email'));

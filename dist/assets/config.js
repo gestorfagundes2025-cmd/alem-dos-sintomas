@@ -7,8 +7,8 @@ window.JORNADA_CONFIG = Object.freeze({
   metaPixelId: "2283183939189207",
   // ID comercial preservado até confirmar o produto da segunda edição na Hubla.
   ticketId: "jornada_16092026",
-  eventEdition: "jornada_20261111_edicao2",
+  eventEdition: "jornada_20261118_edicao2",
   ticketPrice: 69,
   currency: "BRL",
-  eventStart: "2026-11-11T19:00:00-03:00"
+  eventStart: "2026-11-18T19:00:00-03:00"
 });
