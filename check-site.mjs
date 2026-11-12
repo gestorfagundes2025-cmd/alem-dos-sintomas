@@ -11,6 +11,8 @@ assert.equal(config.eventStart,'2026-11-18T19:00:00-03:00');
 assert(index.includes(`data-event-start="${config.eventStart}"`),'Countdown fallback agrees with config');
 assert(!/23\/09|23 de setembro|23 SET|2026-09-23/.test(index),'No first-edition dates in public HTML');
 assert(!/11\/11|11 de novembro|11 NOV|2026-11-11/.test(index),'No previous event date remains');
+assert(index.includes('<strong>18<span>/11</span>'),'Hero date stamp uses new day');
+assert(!/11\s*\/11/.test(index.replace(/<[^>]*>/g,'')),'No split old date remains');
 assert.equal(new Date(config.eventStart).getUTCDay(),3,'Event is Wednesday');
 assert(index.includes('2ª edição')&&index.includes('18 NOV / 2026'));
 for(const meta of ['og:title','og:description','twitter:title','twitter:description']) assert(index.includes(`="${meta}"`));
